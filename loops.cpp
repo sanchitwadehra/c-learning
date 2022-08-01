@@ -60,7 +60,8 @@ else
     }while(a<0);
   }
 cout<<"Thx for giving a number greater than 100\n";
-  for(int i=2;i<a;i++)
+int i;
+  for(i=2;i<a;i++)
     {
       if(a%i==0)
         {
@@ -68,6 +69,9 @@ cout<<"Thx for giving a number greater than 100\n";
           break;
         }
     }
-  cout<<"It is a Prime";
+if(i==a)
+  {
+    cout<<"It is a Prime";
+  }
 return 0;
 }
