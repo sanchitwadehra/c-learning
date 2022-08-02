@@ -32,6 +32,27 @@ int main(){
     else {
         cout<<"Sorry didn't recognise the operator\n";
     }*/
-
+switch (op)
+{
+case '+':
+    sol=num1+num2;//you can't write num1+num2=sol you have to write sol=num1+num2 
+    cout<<sol<<endl;//as lvalue is rquired as left opperand
+    break;//break is needed or else compiler will go on to compile the cases after
+case '-'://condition fulfilling case too
+    sol=num2-num1;
+    cout<<sol<<endl;
+    break;
+case '*':
+    sol=num1*num2;
+    cout<<sol<<endl;
+    break;
+case '/':
+    sol=num2/num1;
+    cout<<sol<<endl;
+    break;
+default:
+    cout<<"Sorry didn't recognise the operator\n";
+    break;
+}
 return 0;
 }
