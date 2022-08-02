@@ -2,7 +2,7 @@
 using namespace std;
 
 int main(){
-    /*float num1;
+    float num1;
     float num2;
     cout<<"Enter first number :-\n";
     cin>>num1;
@@ -13,7 +13,7 @@ int main(){
     cin>>op;
     float sol;
     cout<<"Solution :-\n";
-    if(op=='+'){
+    /*if(op=='+'){
         sol=num1+num2;
         cout<<sol<<endl;
     }
