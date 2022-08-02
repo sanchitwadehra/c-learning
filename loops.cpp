@@ -16,6 +16,7 @@ cout<<"sum of numbers till "<<n<<" is "<<sum<<endl;
 
 
 
+
 int a;
 cout<<"Please enter a numeber greater than 100 :- ";
 cin>>a;
@@ -70,7 +71,7 @@ int i;
       if(a%i==0)
         {
           cout<<"It is a Non Prime\n";
-          break;
+          break;//break will take you out of the loops 
         }
     }
 if(i==a)
