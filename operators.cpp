@@ -2,7 +2,9 @@
 using namespace std;
 
 int main(){
-    //Arithmetic Operators
+    /*
+    Arithmetic Operators
+    */
     int i=10,j=20,k;
     //10    9      19    20    9     20    10    19
     k=i-- - i++ + --j - ++j + --i - j-- + ++i - j++;
@@ -11,5 +13,16 @@ int main(){
     cout<<j<<endl;//20
     cout<<k<<endl;//-20
 
+    /*
+    Relational Operators 
+    Examples of it are :-
+    ==
+    !=
+    <
+    >
+    <=
+    >=
+    */
+   
     return 0;
 }
