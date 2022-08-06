@@ -48,5 +48,15 @@ int main(){
       a<<n gives a*2^n
       a>>n gives a/2^n
     */
+    
+    /*
+    Assignment Operators
+    = Assigns value of right operand to the left operand
+    += Assigns sum of two operands two left operand
+    -= Assigns difference of two operand to left operand
+    *= Assigns products of two operand to left operand 
+    /= Assigns quotient of two opernds to left operand
+    */
+    
     return 0;
 }
