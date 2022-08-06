@@ -58,5 +58,29 @@ int main(){
     /= Assigns quotient of two opernds to left operand
     */
     
+    /*
+    Miscellenious Operators
+    sizeof() returns the size of variables
+    condition?x:y Also known as ternary/Conditionary operator
+      returns value of x if condition is true and y if 
+      condition is falseq
+      For Example :-
+      int a = 10;
+      int b = 5;
+      int c=a>b?a-b:b-a
+    cast converts one data type to another
+      For Example :-
+      char ch='a'
+      int(ch)
+      It will gove output of 97 as per the ASCII table
+    Comma(,) Causes a sequence of operators to be performed
+      For Example :-
+      a=(2,3,4) 
+      It will assign 4 to a because a was assigned
+      values in a sequence as written in the bracket
+    & returns the address of a variable
+    * Pointer to a variable
+      to be explained afterwards
+    */
     return 0;
 }
