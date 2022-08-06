@@ -16,13 +16,13 @@ int main(){
     /*
     Relational Operators 
     Examples of it are :-
-    ==
-    !=
-    <
-    >
-    <=
-    >=
-    */
-   
+    == gives true value if both operands are equal
+    != gives true operands if both are not equal
+    < true if right operand is big
+    > true if left operand is big
+    <= true if right operand is big or equal to the left operand
+    >= true if left operand is big or equal to the right operand
+    */ 
+
     return 0;
 }
