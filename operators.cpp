@@ -82,5 +82,10 @@ int main(){
     * Pointer to a variable
       to be explained afterwards
     */
+    
+    /*
+    search operators precedence table it is about the 
+    order in which it is compiled
+    */
     return 0;
 }
