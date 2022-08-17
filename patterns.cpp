@@ -54,5 +54,14 @@ for(int j=1;j<=5;j++){
     cout<<endl;
 }
 cout<<endl;
+int l=1;
+for(int m=1;m<=5;m++){
+    for(int n=1;n<=m;n++){
+        cout<<l<<" ";
+        l++;
+    }
+    cout<<endl;
+}
+cout<<endl;
 return 0;
 }
