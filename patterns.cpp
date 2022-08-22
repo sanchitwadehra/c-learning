@@ -81,5 +81,45 @@ for(int s=num;s>=1;s--){
     }
     cout<<endl;
 }
+cout<<endl;
+for(int w=num;w>=1;w--){
+    for(int x=1;x<=w;x++){
+        cout<<x<<" ";
+    }
+    cout<<endl;
+}
+cout<<endl;
+for(int y=1;y<=num;y++){
+    for(int z=1;z<=y;z++){
+        if((y+z)%2==0){
+            cout<<"1 ";
+        }
+        else{
+            cout<<"0 ";
+        }
+    }
+    cout<<endl;
+}
+cout<<endl;
+for(int aa=num;aa>=1;aa--){
+    for(int ab=aa;ab>=1;ab--){
+        cout<<"  ";
+    }
+    for(int ac=1;ac<=num;ac++){
+        cout<<"* ";
+    }
+    cout<<endl;
+}
+cout<<endl;
+for(int ad=1;ad<=num;ad++){
+    for(int ae=(num-ad);ae>=1;ae--){
+        cout<<"  ";
+    }
+    for(int af=1;af<=ad;af++){
+        cout<<af<<" ";
+    }
+    cout<<endl;
+}
+cout<<endl;
 return 0;
 }
