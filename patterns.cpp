@@ -57,5 +57,29 @@ for(int m=1;m<=num;m++){
     cout<<endl;
 }
 cout<<endl;
+for(int o=1;o<=num;o++){
+    for(int p=1;p<=o;p++){
+        cout<<"* ";
+    }
+    for(int q=1;q<=(2*num-2*o);q++){
+        cout<<"  ";
+    }
+    for(int r=1;r<=o;r++){
+        cout<<"* ";
+    }
+    cout<<endl;
+}
+for(int s=num;s>=1;s--){
+    for(int t=1;t<=s;t++){
+        cout<<"* ";
+    }
+    for(int u=1;u<=(2*num-2*s);u++){
+        cout<<"  ";
+    }
+    for(int v=1;v<=s;v++){
+        cout<<"* ";
+    }
+    cout<<endl;
+}
 return 0;
 }
