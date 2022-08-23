@@ -170,5 +170,6 @@ for(int as=1;as<=3;as++){
     }
     cout<<endl;
 }
+cout<<endl;
 return 0;
 }
