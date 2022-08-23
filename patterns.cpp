@@ -158,5 +158,17 @@ for(int ao=1;ao<=num;ao++){
     }
     cout<<endl;
 }
+cout<<endl;
+for(int as=1;as<=3;as++){
+    for(int at=1;at<=num;at++){
+        if((as+at)%4==0 || as%2==0 & at%4==0){
+            cout<<"* ";
+        }
+        else{
+            cout<<"  ";
+        }
+    }
+    cout<<endl;
+}
 return 0;
 }
