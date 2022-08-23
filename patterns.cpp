@@ -134,5 +134,29 @@ for(int ag=1;ag<=num;ag++){
     cout<<endl;
 }
 cout<<endl;
+for(int ak=1;ak<=num;ak++){
+    for(int al=(num-ak);al>=1;al--){
+        cout<<"  ";
+    }
+    for(int am=ak;am>=1;am--){
+        cout<<"* ";
+    }
+    for(int an=1;an<ak;an++){
+        cout<<"* ";
+    }
+    cout<<endl;
+}
+for(int ao=1;ao<=num;ao++){
+    for(int ap=(ao-1);ap>=1;ap--){
+        cout<<"  ";
+    }
+    for(int aq=(num-(ao-1));aq>=1;aq--){
+        cout<<"* ";
+    }
+    for(int ar=(num-ao);ar>=1;ar--){
+        cout<<"* ";
+    }
+    cout<<endl;
+}
 return 0;
 }
