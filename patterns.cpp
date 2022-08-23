@@ -113,10 +113,23 @@ for(int aa=num;aa>=1;aa--){
 cout<<endl;
 for(int ad=1;ad<=num;ad++){
     for(int ae=(num-ad);ae>=1;ae--){
-        cout<<"  ";
+        cout<<" ";
     }
     for(int af=1;af<=ad;af++){
         cout<<af<<" ";
+    }
+    cout<<endl;
+}
+cout<<endl;
+for(int ag=1;ag<=num;ag++){
+    for(int ah=(num-ag);ah>=1;ah--){
+        cout<<"  ";
+    }
+    for(int ai=ag;ai>=1;ai--){
+        cout<<ai<<" ";
+    }
+    for(int aj=1;aj<ag;aj++){
+        cout<<(aj+1)<<" ";
     }
     cout<<endl;
 }
