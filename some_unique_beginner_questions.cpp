@@ -17,7 +17,7 @@ int main(){
     if(flag==1){
         cout<<"Prime\n";
     }
-    for(float a=1;float divider=pow(10,a);a<=(remainder(num,divider)==num);a++){
+    for(float a=1,divider=pow(10,a);a<=(remainder(num,divider)==num);a++){
         float indigit=remainder(num,divider);
 
     }
