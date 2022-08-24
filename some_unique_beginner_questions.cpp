@@ -2,20 +2,21 @@
 #include<cmath>
 using namespace std;
 int main(){
-    int num;
-    cout<<"Enter a number :- \n";
+    float num;
+    cout<<"Enter a Multi-digit number :- \n";
     cin>>num;
     bool flag=1;
-    for(int a=2;a<=sqrt(num);a++){//sqrt() is used here as if a number has factor until sqrt of it 
+    for(float a=2;a<=sqrt(num);a++){//sqrt() is used here as if a number has factor until sqrt of it 
     //then the factor after sqrt is actually a multiple of that first factor
-        if(num%a==0){
-            cout<<"Non-Prime";
+        if(remainder(num,a)==0){//% operator doesn't work in case of float values
+            cout<<"Non-Prime\n";
             flag=0;/*Unique way to know weather a If statement was executed or not*/
             break;
         }
     }
     if(flag==1){
-        cout<<"Prime";
+        cout<<"Prime\n";
     }
-    return 0;
+    
+return 0;
 }
