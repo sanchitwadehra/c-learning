@@ -17,9 +17,9 @@ int main(){
     if(flag==1){
         cout<<"Prime\n";
     }
-    for(float a=1,divider=pow(10,a);a<=(remainder(num,divider)==num);a++){
-        float indigit=remainder(num,divider);
-
-    }
+    /* pow() is to be used instead of ^ as ^ is XOR operator
+    and pow() returns float and hence % can't be used as it doesn't work
+    with float category instead for float we have remainder(numenator/denominator) */
+    
 return 0;
 }
