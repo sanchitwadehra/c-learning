@@ -21,5 +21,21 @@ int main(){
     and pow() returns float and hence % can't be used as it doesn't work
     with float category instead for float we have remainder(numenator/denominator) */
     
+    //So we will first count number of digits
+    int num_int=static_cast<int>(num);
+    int flag_a=1;
+    int a=1;
+    float b=pow(10,a);
+    int abc=static_cast<int>(b);
+    /*static_cast explained :- 
+    https://stackoverflow.com/questions/103512/why-use-static-castintx-instead-of-intx
+    */
+    while((num_int%abc)<num_int){
+        a++;
+        float c=pow(10,a);
+        abc=static_cast<int>(c);
+        flag_a++;
+    }
+    cout<<"Amount of digits in number :-"<<flag_a<<endl;
 return 0;
 }

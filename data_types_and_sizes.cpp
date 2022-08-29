@@ -3,7 +3,7 @@ using namespace std;
 //A namespace is a declarative region that provides a scope to the identifiers (the names of types, functions, variables, etc) inside it
 //Namespaces are used to organize code into logical groups and to prevent name collisions that can occur especially when your code base includes multiple libraries.
 //If just in case this was not written then I would need to write std::cout std::cin
-//Temrinal Command to run a file :- dot / file name
+//Terminal Command to run a file :- dot / file name
 //An int is a keyword that references an integer data type. An int data type used with the main() function that indicates the function should return an integer value.
 //When we use an int main() function, it is compulsory to write return 0; statement at the end of the main() function.
 int main()
