@@ -2,25 +2,25 @@
 #include<cmath>
 using namespace std;
 int main(){
-    int num;
+    int a,b,c,d,e,f,g,h,num,abc,flag_a;
+    float a0,b0,c0,d0,e0,f0,g0,h0;
     cout<<"Enter a Multi-digit number :- \n";
     cin>>num;
-    int flag_a=1;
-    int a=1;
-    float b=pow(10,a);
-    int abc=static_cast<int>(b);
+    flag_a=1;
+    a=1;
+    b0=pow(10,a);
+    abc=static_cast<int>(b0);
     while((num%abc)<num){
         a++;
-        float c=pow(10,a);
-        abc=static_cast<int>(c);
+        c0=pow(10,a);
+        abc=static_cast<int>(c0);
         flag_a++;
     }
     cout<<"(num/pow) :- "<<(num%abc)<<endl;
     cout<<"flag_a :- "<<flag_a<<endl;
     cout<<"a :- "<<a<<endl;
-    cout<<b<<endl;
-    cout<<abc<<endl;
-    cout<<"size of b :-"<<sizeof(b)<<endl;
-    cout<<"size of pow :- "<<sizeof(abc)<<endl;
+    cout<<"b0 :- "<<b0<<endl;
+    cout<<"c0 :- "<<c0<<endl;
+    cout<<"abc :- "<<abc<<endl;
     return 0;
 }
