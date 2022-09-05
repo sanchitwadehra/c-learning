@@ -22,20 +22,37 @@ int main(){
     with float category instead for float we have remainder(numenator/denominator) */
     
     //So we will first count number of digits
-    int num_int=static_cast<int>(num);
-    int flag_a=1;
-    int a=1;
-    float b=pow(10,a);
-    int abc=static_cast<int>(b);
     /*static_cast explained :- 
     https://stackoverflow.com/questions/103512/why-use-static-castintx-instead-of-intx
     */
-    while((num_int%abc)<num_int){
-        a++;
-        float c=pow(10,a);
-        abc=static_cast<int>(c);
-        flag_a++;
+    int number,f1,r,counter,rev_counter,n_count,num_out;
+    float rv1,rv2;
+    number=static_cast<int>(num);
+    f1=0;
+    n_count=1;
+    num_out=0;
+    rv1=pow(10,n_count);
+        counter=static_cast<int>(rv1);
+    while((number%counter)<number){
+        n_count++;
+        rv1=pow(10,n_count);
+        counter=static_cast<int>(rv1);
+        f1++;
     }
-    cout<<"Amount of digits in number :-"<<flag_a<<endl;
+    /*cout<<"in-between n-count :-"<<n_count<<endl;
+    cout<<"in-between f1 :-"<<f1<<endl;
+    cout<<"in-between counter :-"<<counter<<endl;*/
+    while(number>=1){
+        r=(number%10);
+        number=number-r;
+        number=number/10;
+        rv2=pow(10,(n_count-1));
+        rev_counter=static_cast<int>(rv2);
+        num_out=((r*rev_counter)+num_out);
+        f1--;
+        n_count--;
+    }
+    cout<<"Reversed number :- "<<num_out<<endl;
+    //cout<<"final f1 :-"<<f1<<endl;
 return 0;
 }
