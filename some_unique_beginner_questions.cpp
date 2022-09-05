@@ -22,9 +22,6 @@ int main(){
     with float category instead for float we have remainder(numenator/denominator) */
     
     //So we will first count number of digits
-    /*static_cast explained :- 
-    https://stackoverflow.com/questions/103512/why-use-static-castintx-instead-of-intx
-    */
     int number,f1,r,counter,rev_counter,n_count,num_out;
     float rv1,rv2;
     number=static_cast<int>(num);
@@ -33,6 +30,9 @@ int main(){
     num_out=0;
     rv1=pow(10,n_count);
         counter=static_cast<int>(rv1);
+        /*static_cast explained :- 
+    https://stackoverflow.com/questions/103512/why-use-static-castintx-instead-of-intx
+    */
     while((number%counter)<number){
         n_count++;
         rv1=pow(10,n_count);
