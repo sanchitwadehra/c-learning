@@ -54,5 +54,32 @@ int main(){
     }
     cout<<"Reversed number :- "<<num_out<<endl;
     //cout<<"final f1 :-"<<f1<<endl;
+
+    //To find a Armstrong number
+    int lastdigit,cubed_int,sum;
+    float cubed;
+    f1=0;
+    sum=0;
+    
+    number=num;
+    while(number>=1){
+        lastdigit=(number%10);
+        cubed=pow(lastdigit,3);
+        cubed_int=static_cast<int>(cubed);
+        sum=cubed_int+sum;
+        number=number-lastdigit;
+        number=number/10;
+        f1++;
+    }
+    /*cout<<f1<<endl;
+    cout<<sum<<endl;
+    cout<<num<<endl;
+    cout<<number<<endl;*/
+    if(sum==num){
+        cout<<"It's an Armstrong number"<<endl;
+    }
+    else{
+        cout<<"No It's not a armstrong number"<<endl;
+    }
 return 0;
 }
