@@ -2,7 +2,7 @@
 #include<cmath>
 using namespace std;
 
-void print(int num1,int num2){
+void primes_between(int num1,int num2){
     int b;
     cout<<"The prime numbers between them are :- "<<endl;
     for(int a=num1;a<=num2;a++){
@@ -24,6 +24,6 @@ int main(){
     cin>>a;
     cout<<"Enter second number :-\n";
     cin>>b;
-    print(a,b);
+    primes_between(a,b);
     return 0;
 }

@@ -4,7 +4,7 @@ using namespace std;
 
 //void means null so there is 
 //nothing written in return statement
-void print(int num1,int num2){
+void primes_between(int num1,int num2){
     int b;
     cout<<"The prime numbers between them are :- "<<endl;
     for(int a=num1;a<=num2;a++){
@@ -29,6 +29,6 @@ int main(){
     /*cout<<"The prime numbers between them is :- "<<print_prime(a,b)<<endl;
     This would have been wrong it is a function just like 
     if statement ,while statement ,etc. */
-    print(a,b);
+    primes_between(a,b);
     return 0;
 }
