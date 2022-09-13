@@ -19,16 +19,21 @@ void print(int num1,int num2){
 return;
 }
 
+int print_prime(int num_1,int num_2){
+    print(num_1,num_2);
+    return 0;
+}
+
 int main(){
-    int num_1,num_2;
+    int a,b;
     cout<<"Enter first number :-\n";
-    cin>>num_1;
+    cin>>a;
     cout<<"Enter second number :-\n";
-    cin>>num_2;
+    cin>>b;
     cout<<"The prime numbers between them is :- "<<endl;
-    /*cout<<"The prime numbers between them is :- "<<print(num_1,num_2)<<endl;
+    /*cout<<"The prime numbers between them is :- "<<print_prime(a,b)<<endl;
     This would have been wrong it is a function just like 
     if statement ,while statement ,etc. */
-    print(num_1,num_2);
+    print_prime(a,b);
     return 0;
 }
