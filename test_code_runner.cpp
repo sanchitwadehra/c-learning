@@ -19,15 +19,19 @@ return;
 }
 
 void fibonacci_between(int num1,int num2){
-    int a,b,c,d,f1;
-    f1=0;
+    int a,b,c,f1;
+    a=0;
     b=1;
-    cout<<f1;
-    cout<<b;
-    for(a=0;f1<=num2;f1++){
-        a=b+a;
-        cout<<a;
-        b=a;
+    cout<<a<<endl;
+    cout<<b<<endl;
+    f1=0;
+    cout<<"The fibonacci numbers till "<<num2<<"th position are :-"<<endl;
+    while(f1<=num2){
+    c=a+b;
+    cout<<c<<endl;;
+    a=b;
+    b=c;
+    f1++;
     }
     return;
 }
