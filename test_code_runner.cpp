@@ -36,6 +36,10 @@ void fibonacci_between(int num1,int num2){
     return;
 }
 
+void factorial(int num1,int num2){
+    
+}
+
 int main(){
     int a,b;
     cout<<"Enter first number :-\n";
