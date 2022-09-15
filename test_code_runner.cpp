@@ -2,6 +2,24 @@
 #include<cmath>
 using namespace std;
 
+void arranged(int num1,int num2){
+    if(num1>num2){
+        int a,b,c;
+        a=num1;
+        b=num2;
+        c=a;
+        a=b;
+        b=c;
+        cout<<"The numbers have been arranged in ascending order :-"<<endl;
+        cout<<a<<endl;
+        cout<<b<<endl;
+    }
+    else{
+        cout<<"The numbers are already in Ascending order so thx for that."<<endl;
+    }
+    return;
+}
+
 void primes_between(int num1,int num2){
     int b;
     cout<<"The prime numbers between them are :- "<<endl;
@@ -22,10 +40,10 @@ void fibonacci_between(int num1,int num2){
     int a,b,c,f1;
     a=0;
     b=1;
+    cout<<"The fibonacci numbers till "<<num2<<"th position are :-"<<endl;
     cout<<a<<endl;
     cout<<b<<endl;
     f1=0;
-    cout<<"The fibonacci numbers till "<<num2<<"th position are :-"<<endl;
     while(f1<=num2){
     c=a+b;
     cout<<c<<endl;;
@@ -46,6 +64,7 @@ int main(){
     cin>>a;
     cout<<"Enter second number :-\n";
     cin>>b;
+    arranged(a,b);
     primes_between(a,b);
     fibonacci_between(a,b);
     return 0;
