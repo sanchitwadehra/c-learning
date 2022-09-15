@@ -17,7 +17,6 @@ void arranged(int num1,int num2){
     else{
         cout<<"The numbers are already in Ascending order so thx for that."<<endl;
     }
-    return;
 }
 
 void primes_between(int num1,int num2){
@@ -65,6 +64,9 @@ int main(){
     cout<<"Enter second number :-\n";
     cin>>b;
     arranged(a,b);
+    cout<<"Testing :-"<<endl;
+    cout<<a<<endl;
+    cout<<b<<endl;
     primes_between(a,b);
     fibonacci_between(a,b);
     return 0;
