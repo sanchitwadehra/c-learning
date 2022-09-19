@@ -39,11 +39,17 @@ void fibonacci_between(int num1,int num2){
 }
 
 int main(){
-    int a,b;
+    int a,b,c;
     cout<<"Enter first number :-\n";
     cin>>a;
     cout<<"Enter second number :-\n";
     cin>>b;
+    c=a;
+    a=b;
+    b=c;
+    cout<<"The numbers have been arranged in ascending order :-"<<endl;
+    cout<<a<<endl;
+    cout<<b<<endl;
     /*cout<<"The prime numbers between them is :- "<<print_prime(a,b)<<endl;
     This would have been wrong it is a function just like 
     if statement ,while statement ,etc. */

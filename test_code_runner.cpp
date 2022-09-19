@@ -58,13 +58,15 @@ void factorial(int num1,int num2){
 }
 
 int main(){
-    int a,b;
+    int a,b,c;
     cout<<"Enter first number :-\n";
     cin>>a;
     cout<<"Enter second number :-\n";
     cin>>b;
-    arranged(a,b);
-    cout<<"Testing :-"<<endl;
+    c=a;
+    a=b;
+    b=c;
+    cout<<"The numbers have been arranged in ascending order :-"<<endl;
     cout<<a<<endl;
     cout<<b<<endl;
     primes_between(a,b);
