@@ -2,23 +2,6 @@
 #include<cmath>
 using namespace std;
 
-void arranged(int num1,int num2){
-    if(num1>num2){
-        int a,b,c;
-        a=num1;
-        b=num2;
-        c=a;
-        a=b;
-        b=c;
-        cout<<"The numbers have been arranged in ascending order :-"<<endl;
-        cout<<a<<endl;
-        cout<<b<<endl;
-    }
-    else{
-        cout<<"The numbers are already in Ascending order so thx for that."<<endl;
-    }
-}
-
 void primes_between(int num1,int num2){
     int b;
     cout<<"The prime numbers between them are :- "<<endl;
@@ -54,7 +37,14 @@ void fibonacci_between(int num1,int num2){
 }
 
 void factorial(int num1,int num2){
-    
+    int a,b,out;
+    cout<<"The factorial of "<<num2<<" is :-"<<endl;
+    out=num2;
+    while(num2>=2){
+        num2--;
+        out=out*num2;
+    }
+    cout<<out<<endl;
 }
 
 int main(){
@@ -63,13 +53,16 @@ int main(){
     cin>>a;
     cout<<"Enter second number :-\n";
     cin>>b;
-    c=a;
-    a=b;
-    b=c;
-    cout<<"The numbers have been arranged in ascending order :-"<<endl;
-    cout<<a<<endl;
-    cout<<b<<endl;
+    if(a>=b){
+        c=a;
+        a=b;
+        b=c;
+        cout<<"The numbers have been arranged in ascending order :-"<<endl;
+        cout<<a<<endl;
+        cout<<b<<endl;
+    }
     primes_between(a,b);
     fibonacci_between(a,b);
+    factorial(a,b);
     return 0;
 }
