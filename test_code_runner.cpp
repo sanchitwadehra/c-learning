@@ -37,7 +37,7 @@ void fibonacci_between(int num1,int num2){
 }
 
 void factorial(int num1,int num2){
-    int a,b,out;
+    int out;
     cout<<"The factorial of "<<num2<<" is :-"<<endl;
     out=num2;
     while(num2>=2){
