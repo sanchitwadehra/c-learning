@@ -36,15 +36,35 @@ void fibonacci_between(int num1,int num2){
     return;
 }
 
-void factorial(int num1,int num2){
+int factorial(int num1,int num2){
     int out;
-    cout<<"The factorial of "<<num2<<" is :-"<<endl;
     out=num2;
     while(num2>=2){
         num2--;
         out=out*num2;
     }
-    cout<<out<<endl;
+    return out;
+}
+
+int ncr(int num1,int num2){
+    int a,b,c,n,r,ncr;
+    n=num2;
+    r=num1;
+    a=factorial(0,n);
+    b=factorial(0,n-r);
+    c=factorial(0,r);
+    ncr=a/(b*c);
+    return ncr;
+}
+
+void pascaltri(int num1,int num2){
+    cout<<num2;
+    for(int a=1;a<=num2;a++){
+        for(int b=1;b<=a;b++){
+            cout<<ncr(b-1,a-1);
+        }
+    }
+    return;
 }
 
 int main(){
@@ -63,6 +83,26 @@ int main(){
     }
     primes_between(a,b);
     fibonacci_between(a,b);
-    factorial(a,b);
+    cout<<"The Factorial of "<<b<<" is :-"<<endl;
+    cout<<factorial(a,b)<<endl;
+    cout<<"The nCr for n="<<b<<" and r="<<a<<" is :-"<<endl;
+    cout<<ncr(a,b)<<endl;
+    pascaltri(a,b);
     return 0;
 }
+
+/*
+#include<iostream>
+using namespace std;
+
+int main(){
+    int num2=10;
+    for(int a=1;a<=num2;a++){
+        for(int b=1;b<=a;b++){
+            cout<<a<<" ";
+        }
+        cout<<endl;
+    }
+    return 0;
+}
+*/
