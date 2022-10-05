@@ -1,7 +1,10 @@
 #include<iostream>
 #include<cmath>
 using namespace std;
-
+/*
+#include<algorithm> allows you to use max() function to find biggest number among two
+by default it is a inbuilt function in <algorithm> header file
+*/
 //void means null so there is 
 //nothing written in return statement
 void primes_between(int num1,int num2){
