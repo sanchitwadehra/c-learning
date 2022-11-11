@@ -6,11 +6,11 @@ int main(){
     int a[n],z=1;
     printf("Enter " "%d" " values into the Array :- \n",n);
     for(int i=1;i<=(n);i++){
-        printf("Testing loop count");
-        scanf("%d \n",&a[(i-1)]);
+        //printf("Testing loop count");
+        scanf("%d",&a[(i-1)]);
     }
     
-    printf("Values of the Array entered are as follows :-");
+    printf("Values of the Array entered are as follows :- \n");
     for(int i=1;i<=(n);i++){
         printf("%d \n",a[(i-1)]);
     }
@@ -36,7 +36,7 @@ int main(){
         }
     }
 
-    printf("array after arranging in ascending order :-");
+    printf("array after arranging in ascending order :- \n");
     for(int i=1;i<=(n);i++){
         printf("%d \n",a[(i-1)]);
     }
