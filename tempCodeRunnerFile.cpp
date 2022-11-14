@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<math.h>
 int main(){
-    int n,x,k,a=1;
-    float final,sum,num,term;
+    int n,x,k,num,a;
+    float final,sum,term;
     printf("We are solving e^x = 1 + x +x^2/(2!) + x^3/(3!) ....");
     printf("Enter the value of x :- \n");
     scanf("%d",&x);
@@ -12,14 +12,15 @@ int main(){
     k=(n-1);
     sum=0;
     for(int i=1;i<=k;i++){
+        a=1;
         num=pow(x,i);
         for(int j=1;j<=i;j++){
-            a=a*j;
+            a=a*((float)j);
             printf("%d \n",a);
         }
         printf("%d \n",a);
         printf("%d \n",num);
-        term=(float)(num/a);
+        term=(float)(((float)num)/a);
         sum=sum+term;
     }
     final=sum+1;
