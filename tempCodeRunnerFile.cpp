@@ -21,7 +21,7 @@ int main(){
     }
     final=sum+1;
     printf("So e^%d = 1 + %d +%d^2/(2!) + %d^3/(3!) .... \n",x,x,x,x);
-    printf("Calculated till n terms is :- \n");
+    printf("Calculated till %d terms is :- \n",n);
     printf("%f",final);
     return 0;
 }

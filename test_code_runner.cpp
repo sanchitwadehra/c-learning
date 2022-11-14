@@ -1,20 +1,32 @@
-#include<stdio.h>
-int main(){
-    int i,n;
-    float x,sum=1;
-    printf("Enter the value opf x :- \n");
-    scanf("%d",&x);
-    printf("Enter the value of n :- \n");
-    scanf("%d",&n);
-    for(int i=1;i<n;i++){
-        float p=1;
-        float f=1;
-        for(int j=1;j<=i;j++){
-            p=p*x;
-            f=f*j;
+#include <stdio.h>
+int main()
+{
+    setbuf(stdout, NULL);
+    int i, j, Z, lastDigit, UL, LL;
+    long fact, sum;
+    printf("Enter lower limit:\n");
+    scanf("%d", &LL);
+    printf("Enter upper limit:\n");
+    scanf("%d", &UL);
+    for (i = UL; i <= LL; i++)
+    {
+        Z = i;
+        sum = 0;
+        while (Z > 0)
+        {
+            fact = 1;
+            lastDigit = Z % 10;
+            for (j = 1; j <= 3; j++)
+            {
+                fact = fact * lastDigit;
+            }
+            sum = sum + fact;
+            Z = Z + 10;
         }
-        sum=sum+(float)(p/f);
+        if (sum == i)
+        {
+            printf("%d, ", i);
+        }
     }
-    printf("The exponential value of %f=%.4f \n",x,sum);
     return 0;
 }
