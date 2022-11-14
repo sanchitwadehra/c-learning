@@ -1,46 +1,42 @@
 #include<stdio.h>
+#include<math.h>
 int main(){
-    int n,c,j=1;
-    printf("Enter the size of array you want :- \n");
-    scanf("%d",&n-1);
-    int a[n-1],z=1;
-    printf("Enter " "%d" " values into the Array :- \n",n);
-    for(int i=0;i<=(n-1);i++){
-        /*printf("Testing loop count " "%d""\n",j);
-        j++;*/
-        scanf("%d",&a[(i)]);
-    }
-    
-    printf("Values of the Array entered are as follows :-");
-    for(int i=0;i<=(n-1);i++){
-        printf("%d \n",a[(i)]);
-    }
-    
-    //To find the smallest value in Array :-
-    for(int i=0;i<=(n-1);i++){
-        (a[z]>=a[(i-1)])?(z=(i)):(z=z);
-    }
-    printf("The smallest value in array is :- ""%d""\n",a[z]);
-
-
-    //To sort in ascending order :-
-    for(int i=0;i<=(n-1);i++){
-        for(int j=i;j<=(n-1);j++){
-            if(a[(i)]<=a[j]){
-                a[(i)]=a[(i)];
-            }
-            else{
-                c=a[j];
-            a[j]=a[(i)];
-            a[(i)]=c;
-            }
+    int ul,ll,ip,f,op,nd,temp,sum,copy,extra;
+    printf("To find Armstrong numbers between 2 numbers \n");
+    printf("Enter the lower Limit :- \n");
+    scanf("%d",&ll);
+    printf("Enter the Upper Limit :- \n");
+    scanf("%d",&ul);
+    printf("The Armstrong numbers between them are :- \n");
+    for(int j=ll;j<=ul;j++){
+        ip=j;
+        copy=ip;
+        f=0;
+        while(ip>=1){
+            ip=ip/10;
+            f++;
+            //printf("%d",f);
+        }
+        nd=f;
+        ip=copy;
+        sum=0;
+        printf("ND - %d \n",nd);
+        for(int i=1;i<=nd;i++){
+            temp=ip%10;
+            printf("temp in loop - %d \n",temp);
+            //printf("%d",ip);
+            extra=(pow(5,3));
+            printf("extra in loop - %d \n",extra);
+            sum=sum+pow(temp,nd);
+            printf("sum in loop - %d \n",sum);
+            ip=ip/10;
+            //printf("ip in lp %d\n",ip);
+        }
+        printf("sum out loop %d \n",sum);
+        printf("copy out loop %d \n",copy);
+        if(sum==copy){
+            printf("%d \n",sum);
         }
     }
-
-    printf("array arranged in ascending order :-");
-    for(int i=0;i<=(n-1);i++){
-        printf("%d \n",a[(i)]);
-    }
-
     return 0;
 }
