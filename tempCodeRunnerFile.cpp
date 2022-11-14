@@ -16,11 +16,8 @@ int main(){
         num=pow(x,i);
         for(int j=1;j<=i;j++){
             a=a*((float)j);
-            printf("%d \n",a);
         }
-        printf("%d \n",a);
-        printf("%d \n",num);
-        term=(float)(((float)num)/a);
+        term=(float)(((float)num)/((float)a));
         sum=sum+term;
     }
     final=sum+1;
