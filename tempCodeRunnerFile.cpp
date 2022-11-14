@@ -8,7 +8,6 @@ int main(){
     scanf("%d",&x);
     printf("How many terms of the given above formula do you want to calculate :- \n");
     scanf("%d",&n);
-    printf("\n\n");
     k=(n-1);
     sum=0;
     for(int i=1;i<=k;i++){
