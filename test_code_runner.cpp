@@ -3,7 +3,7 @@
 int main()
 {
     int y;
-    y=pow(5,3);
+    y=round(pow(5,3));
     printf("pow 5^3 :- %d",y);
     return 0;
 }
