@@ -27,7 +27,7 @@ int main(){
             //printf("%d",ip);
             extra=round((pow(5,3)));
             //printf("extra in loop - %d \n",extra);
-            sum=sum+pow(temp,nd);
+            sum=sum+round(pow(temp,nd));
             //printf("sum in loop - %d \n",sum);
             ip=ip/10;
             //printf("ip in lp %d\n",ip);
