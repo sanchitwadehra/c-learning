@@ -40,4 +40,10 @@ int main(){
     }
     return 0;
 }
-//The function pow() returns a double. You're assigning it to variable a, of type int. Doing that doesn't "round off" the floating point value, it truncates it. So pow() is returning something like 99.99999... for 10^2, and then you're just throwing away the .9999... part. Better to say a = round(pow(10, i)).
+/*
+The function pow() returns a double. 
+You're assigning it to variable a, of type int.
+Doing that doesn't "round off" the floating point value, 
+it truncates it. So pow() is returning something like 99.99999... for 10^2, and 
+then you're just throwing away the .9999... part. Better to say a = round(pow(10, i)).
+*/
