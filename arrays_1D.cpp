@@ -1,6 +1,6 @@
 #include<stdio.h>
 int main(){
-    int n,c,j=1,k;
+    int n,c,j=1,k,t_1=0;
     printf("Enter the size of array you want :- \n");
     scanf("%d",&n);
     int a[n],z=1;
@@ -45,6 +45,7 @@ int main(){
     }
 
     //To find duplicates in the array :-
+    printf("The repetitions in Array are :- \n");
     for(int i=1;i<=n;i++){
         c=0;
         k=0;
@@ -54,7 +55,16 @@ int main(){
                 k++;
             }
         }
-        //printf("%d ""is repeated %d times \n",a[i-1],k);
+        if(k>1){
+            t_1++;
+        }
+        else{
+            printf("%d ""is repeated %d times \n",a[i-1],k);
+        }
+        if(t_1==k){
+            t_1=0;
+            printf("%d ""is repeated %d times \n",a[i-1],k);
+        }
     }
     return 0;
 }
