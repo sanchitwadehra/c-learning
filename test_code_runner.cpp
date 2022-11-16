@@ -57,43 +57,6 @@ int main(){
     }
     else{
         printf("The Matrix size is not same \n");
-        printf("do you still want to go ahead(y/n) :- \n");
-        scanf("%c",&ip);
-        scanf("%c",&ip);
-        if(ip=='y','Y'){
-            if(a>c || b>d){
-                e=a;
-                f=b;
-            }
-            else{
-                e=c;
-                f=d;
-            }
-            int arr_3[e][f];
-            for(i=0;i<e;i++){
-                for(j=0;j<f;j++){
-                    if(e=a && ((i+1)>c || (j+1)>d)){
-                        arr_3[i][j]=0+arr_1[i][j];
-                    }
-                    else if(e=c && ((i+1)>a || (j+1)>b)){
-                        arr_3[i][j]=arr_2[i][j]+0;
-                    }
-                    else{
-                        arr_3[i][j]=arr_2[i][j]+arr_1[i][j];   
-                    }
-                }
-            }
-            printf("Array after addition :- \n");
-            for(i=0;i<e;i++){
-              for(j=0;j<f;j++){
-                printf("%d ",arr_3[i][j]);
-              }
-              printf("\n");
-            }
-        }
-        else{
-            printf("Thx for replying have a nice day.");
-        }
     }
     return 0;
 }
