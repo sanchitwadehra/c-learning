@@ -52,12 +52,13 @@ int main(){
         }
     }
     else{
-        printf("The Matrix size is not same \n ");
-        /*printf("do you still want to go ahead(y/n) :- \n");
+        printf("The Matrix size is not same \n");
+        printf("do you still want to go ahead(y/n) :- \n");
+        scanf("%c",&ip);
         scanf("%c",&ip);
         if(ip=='y'){
             printf("ok");
-        }*/
+        }
     }
     return 0;
 }
