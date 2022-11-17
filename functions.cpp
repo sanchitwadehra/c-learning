@@ -74,3 +74,28 @@ int main(){
     factorial(a,b);
     return 0;
 }
+
+/*
+
+
+Function Declaration :- 
+return_type function_name(argument list);
+
+Function calling :-
+function_name(argument);
+
+function definition:-
+return_type function_name(argument list)
+{
+    function body;
+}
+
+4 types of function:-
+
+1) function without return_type and without argument;
+2) function without return_type and with argument;
+3) function with return_type and without argument;
+4) function with return_type and with argument;
+
+
+*/
