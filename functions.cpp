@@ -93,9 +93,55 @@ return_type function_name(argument list)
 4 types of function:-
 
 1) function without return_type and without argument;
+void add();
+int main(){
+    add();
+    return 0;
+}
+void add(){
+    int a,b,c;
+    scanf("%d%d",&a,&b);
+    c=a+b;
+    printf("%d",c);
+}
 2) function without return_type and with argument;
+void add(int,int);
+int main(){
+    int a,b;
+    scanf("%d%d",&a,&b);
+    add(a,b);
+    return 0;
+}
+void add(int x,int y){
+    int c;
+    c=x+y;
+    printf("%d",c);
+}
 3) function with return_type and without argument;
+int add();
+int main(){
+    int d;
+    d=add();
+    printf("%d",c);
+    return 0;
+}
+int add(){
+    int a,b,c;
+    scanf("%d%d",&a,&b);
+    c=a+b;
+    return c;
+}
 4) function with return_type and with argument;
-
+int add(int,int);
+int main(){
+    int a,b;
+    scanf("%d%d",&a,&b);
+    c=add(a,b);
+    printf("%d",c);
+    return 0;
+}
+int add(int x,int y){
+    return (x+y);
+}
 
 */
