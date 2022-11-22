@@ -1,4 +1,20 @@
-#include <stdio.h>
+#include  <stdio.h>
+int add(int i, int j)
+{
+    return (i + j);
+}
+int subtract(int i, int j)
+{
+    return (i - j);
+}
+int division(int i, int j)
+{
+    return (i / j);
+}
+int multiply(int i, int j)
+{
+    return (i * j);
+}
 int main()
 {
     int n, ip;
