@@ -1,196 +1,105 @@
 #include <stdio.h>
-#include <math.h>
-int max(int num1, int num2)
-{
-    return (num1 >= num2) ? num1 : num2;
-}
 int main()
 {
-    int a, b, c, d, e, f, g, h, i, j, ip, sum = 0;
-    printf("Enter rows of 1st array :- \n");
-    scanf("%d", &a);
-    printf("Enter coloumns of 1st array :- \n");
-    scanf("%d", &b);
-    int arr_1[a][b];
-    printf("Enter the values into array :- \n");
-    for (i = 0; i < a; i++)
+    int n, c, ip, j = 1, k, t_1 = 0;
+    printf("Enter the size of array you want :- \n");
+    scanf("%d", &n);
+    int a[n], z = 1;
+    printf("Enter "
+           "%d"
+           " values into the Array :- \n",
+           n);
+    for (int i = 1; i <= (n); i++)
     {
-        for (j = 0; j < b; j++)
-        {
-            scanf("%d", &arr_1[i][j]);
-        }
-        printf("\n");
+        /*printf("Testing loop count " "%d""\n",j);
+        j++;*/
+        scanf("%d", &a[(i - 1)]);
     }
-    printf("1st array is :- \n");
-    for (i = 0; i < a; i++)
+
+    // To print the array
+    printf("Values of the Array entered are as follows :- \n");
+    for (int i = 1; i <= (n); i++)
     {
-        for (j = 0; j < b; j++)
-        {
-            printf("%d ", arr_1[i][j]);
-        }
-        printf("\n");
+        printf("%d \n", a[(i - 1)]);
     }
-    printf("Enter rows of 2nd array :- \n");
-    scanf("%d", &c);
-    printf("Enter coloumns of 2nd array :- \n");
-    scanf("%d", &d);
-    int arr_2[c][d];
-    printf("Enter the values into array :- \n");
-    for (i = 0; i < c; i++)
+
+    // To find the smallest value in Array :-
+    for (int i = 1; i <= (n); i++)
     {
-        for (j = 0; j < d; j++)
-        {
-            scanf("%d", &arr_2[i][j]);
-        }
-        printf("\n");
+        (a[z] >= a[(i - 1)]) ? (z = (i - 1)) : (z = z);
     }
-    printf("2nd array is :- \n");
-    for (i = 0; i < c; i++)
+    printf("The smallest value in array is :- "
+           "%d"
+           "\n",
+           a[z]);
+
+    // To sort in ascending order :-
+    for (int i = 1; i <= (n); i++)
     {
-        for (j = 0; j < d; j++)
+        for (int j = i; j <= (n - 1); j++)
         {
-            printf("%d ", arr_2[i][j]);
+            if (a[(i - 1)] <= a[j])
+            {
+                a[(i - 1)] = a[(i - 1)];
+            }
+            else
+            {
+                c = a[j];
+                a[j] = a[(i - 1)];
+                a[(i - 1)] = c;
+            }
         }
-        printf("\n");
     }
-    printf("What operations do you want to apply :- \n");
-    printf("1) Addition\n");
-    printf("2) Subtraction\n");
-    printf("3) Multiplication\n");
-    printf("4) Transpose\n");
-    printf("Enter the corresponding number :- \n");
+
+    // To print the array
+    printf("array arranged in ascending order :- \n");
+    for (int i = 1; i <= (n); i++)
+    {
+        printf("%d \n", a[(i - 1)]);
+    }
+
+    // To find duplicates in the array :-
+    printf("The repetitions in Array are :- \n");
+    for (int i = 1; i <= n; i++)
+    {
+        c = 0;
+        k = 0;
+        // Counting mechanism of repeated items in array
+        for (int j = 1; j <= n; j++)
+        {
+            if (a[i - 1] == a[j - 1])
+            {
+                k++;
+            }
+        }
+        if (k > 1)
+        {
+            t_1++;
+        }
+        else
+        {
+            printf("%d "
+                   "is repeated %d times \n",
+                   a[i - 1], k);
+        }
+        if (t_1 == k)
+        {
+            t_1 = 0;
+            printf("%d "
+                   "is repeated %d times \n",
+                   a[i - 1], k);
+        }
+    }
+
+    // To search an element
+    printf("Enter the value you want to search in the array :- ");
     scanf("%d", &ip);
-    switch (ip)
+    for (int i = 1; i <= n; i++)
     {
-    case 1:
-        if (a == c && b == d)
+        if (ip == a[(i - 1)])
         {
-            e = a;
-            f = b;
-            int arr_3[e][f];
-            for (i = 0; i < e; i++)
-            {
-                for (j = 0; j < f; j++)
-                {
-                    arr_3[i][j] = arr_1[i][j] + arr_2[i][j];
-                }
-            }
-            printf("Array after addition :- \n ");
-            for (i = 0; i < e; i++)
-            {
-                for (j = 0; j < f; j++)
-                {
-                    printf("%d ", arr_3[i][j]);
-                }
-                printf("\n");
-            }
+            printf("Found at position number :- %d", i);
         }
-        else
-        {
-            printf("The Matrix size is not same \n");
-        }
-        break;
-    case 2:
-        if (a == c && b == d)
-        {
-            e = a;
-            f = b;
-            int arr_3[e][f];
-            for (i = 0; i < e; i++)
-            {
-                for (j = 0; j < f; j++)
-                {
-                    arr_3[i][j] = arr_1[i][j] - arr_2[i][j];
-                }
-            }
-            printf("Array after subtraction :- \n ");
-            for (i = 0; i < e; i++)
-            {
-                for (j = 0; j < f; j++)
-                {
-                    printf("%d ", arr_3[i][j]);
-                }
-                printf("\n");
-            }
-        }
-        else
-        {
-            printf("The Matrix size is not same \n");
-        }
-        break;
-    case 3:
-        if (b == c)
-        {
-            e = a;
-            f = d;
-            int arr_3[e][f];
-            for (i = 0; i < e; i++)
-            {
-                for (j = 0; j < f; j++)
-                {
-                    for (int l = 0; l < b; l++)
-                    {
-                        sum += ((arr_1[i][l]) * (arr_2[l][j]));
-                    }
-                    arr_3[i][j] = sum;
-                    sum = 0;
-                }
-            }
-            printf("Array after multiplication :- \n");
-            for (i = 0; i < e; i++)
-            {
-                for (j = 0; j < f; j++)
-                {
-                    printf("%d ", arr_3[i][j]);
-                }
-                printf("\n");
-            }
-        }
-        else
-        {
-            printf("The coloumns of first Matrix are not same as rows of second matrix\n");
-        }
-        break;
-    case 4:
-        e = b;
-        f = a;
-        int arr_3[e][f];
-        for (i = 0; i < e; i++)
-        {
-            for (j = 0; j < f; j++)
-            {
-                arr_3[i][j] = arr_1[j][i];
-            }
-        }
-        printf("1st Array after Transpose :- \n");
-        for (i = 0; i < e; i++)
-        {
-            for (j = 0; j < f; j++)
-            {
-                printf("%d ", arr_3[i][j]);
-            }
-            printf("\n");
-        }
-        g = d;
-        h = c;
-        int arr_4[g][h];
-        for (i = 0; i < g; i++)
-        {
-            for (j = 0; j < h; j++)
-            {
-                arr_4[i][j] = arr_2[j][i];
-            }
-        }
-        printf("2nd Array after Transpose :- \n");
-        for (i = 0; i < g; i++)
-        {
-            for (j = 0; j < h; j++)
-            {
-                printf("%d ", arr_4[i][j]);
-            }
-            printf("\n");
-        }
-        break;
     }
     return 0;
 }
