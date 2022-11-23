@@ -1,26 +1,16 @@
 #include  <stdio.h>
-int main()
-{
-    int n, ip;
-    printf("Enter the size of array you want :- \n");
-    scanf("%d", &n);
-    int a[n], z = 1;
-    printf("Enter "
-           "%d"
-           " values into the Array :- \n",
-           n);
-    for (int i = 1; i <= (n); i++)
-    {
-        scanf("%d", &a[(i - 1)]);
-    }
-    printf("Enter the value you want to search in the array :- ");
-    scanf("%d", &ip);
-    for (int i = 1; i <= n; i++)
-    {
-        if (ip == a[(i - 1)])
-        {
-            printf("Found at position number :- %d", i);
-        }
-    }
+void swap(int *,int *);
+int main(){
+    int a,b;
+    scanf("%d%d",&a,&b);
+    printf("Value of a is %d and value of b is %d \n",a,b);
+    swap(&a,&b);
+    printf("Value of a is %d and value of b is %d \n",a,b);
     return 0;
+}
+void swap(int *a,int *b){
+    int c;
+    c=*a;
+    *a=*b;
+    *b=c;
 }
