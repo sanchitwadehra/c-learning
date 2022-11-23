@@ -121,10 +121,10 @@ void add(int,int);
 int main(){
     int a,b;
     scanf("%d%d",&a,&b);
-    add(a,b);
+    add(a,b); //a&b here are called actual parameters
     return 0;
 }
-void add(int x,int y){
+void add(int x,int y){ //x&y here are known as forma; parameters
     int c;
     c=x+y;
     printf("%d",c);
