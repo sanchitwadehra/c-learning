@@ -156,4 +156,44 @@ int add(int x,int y){
     return (x+y);
 }
 
+
+Variables management in functions :-
+#include  <stdio.h>
+void swap(int *,int *);
+int main(){
+    int a,b;
+    scanf("%d%d",&a,&b);
+    printf("Value of a is %d and value of b is %d \n",a,b);
+    swap(&a,&b);
+    printf("Value of a is %d and value of b is %d \n",a,b);
+    return 0;
+}
+void swap(int *a,int *b){
+    int c;
+    c=*a;
+    *a=*b;
+    *b=c;
+}
+
+
+Recursion in Functions :- 
+#include <stdio.h>
+int fact(int);
+int main()
+{
+    int num,res;
+    printf("Enter number :- \n");
+    scanf("%d",&num);
+    res=fact(num);
+    printf("%d",res);
+    return 0;
+}
+int fact(int num){
+    if(num==1){
+        return 1;
+    }
+    else{
+        return (num*fact((num-1)));
+    }
+}
 */
