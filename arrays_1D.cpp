@@ -24,7 +24,7 @@ int main(){
     printf("The smallest value in array is :- ""%d""\n",a[z]);
 
 
-    //To sort in ascending order :-
+    //To sort in ascending order selection sort :-
     for(int i=1;i<=(n);i++){
         for(int j=i;j<=(n-1);j++){
             if(a[(i-1)]<=a[j]){
