@@ -1,27 +1,67 @@
-#include  <stdio.h>
-void swap_cv(int,int);
-void swap_cr(int *,int *);
-int main(){
+#include<stdio.h>
+#include<string.h>
+main()
+{
     int a,b;
-    scanf("%d%d",&a,&b);
-    printf("Value of a is %d and value of b is %d \n",a,b);
-    swap_cv(a,b);
-    printf("After using call by value function : -\n");
-    printf("Value of a is %d and value of b is %d \n",a,b);
-    swap_cr(&a,&b);
-    printf("After using call by reference function : -\n");
-    printf("Value of a is %d and value of b is %d \n",a,b);
-    return 0;
-}
-void swap_cv(int a,int b){
-    int c;
-    c=a;
-    a=b;
-    b=c;
-}
-void swap_cr(int *a,int *b){
-    int c;
-    c=*a;
-    *a=*b;
-    *b=c;
+    char s1[100],s2[100];
+    printf("Enter a string.\n");
+    scanf("%s",s1);
+    //strlen(),strrev(),strcat(),strcpy(),strupr(),strlwr(),strcmp()
+    printf("Enter the operation you wish to perform on the string:\n1. String Length\n2. String Reverse\n3. String Concatenation\n4. String Copy\n5. String Upper Case\n6. String Lower Case\n7. String Comparison\n");
+    scanf("%d",&a);
+ 
+    switch(a)
+    {
+    case 1:
+        {
+            b=strlen(s1);
+            printf("String Length = %d",b);
+            break;
+        }
+    case 2:
+        {
+            printf("String Reverse = %s",strrev(s1));
+            break;
+        }
+    case 3:
+        {
+            printf("Enter the target string.\n");
+            scanf("%s",s2);
+            strcat(s2,s1);
+            printf("Result - %s",s2);
+            break;
+        }
+    case 4:
+        {
+            strcpy(s2,s1);
+            printf("Copied String - %s",s2);
+            break;
+        }
+    case 5:
+        {
+            printf("The Upper Case of String is %s",strupr(s1));
+            break;
+        }
+    case 6:
+        {
+            printf("The Lower Case of String is %s",strlwr(s1));
+            break;
+        }
+    case 7:
+        {
+            printf("Enter the string you wish to compare with the previous string.\n");
+            scanf("%s",s2);
+            a=strcmp(s1,s2);
+            //returns -1 for not same , 0 for exactly same
+            //and 1 for same but difference of upper case lower case
+            printf("String Compare %d",a);
+            break;
+        }
+ 
+    default:
+        {
+            printf("You have not entered a valid option.");
+        }
+    }
+ 
 }
