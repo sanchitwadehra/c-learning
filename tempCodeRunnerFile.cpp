@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-main()
+int main()
 {
     int a,b;
     char s1[100],s2[100];
@@ -63,5 +63,5 @@ main()
             printf("You have not entered a valid option.");
         }
     }
- 
+return 0;
 }
