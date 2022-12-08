@@ -195,6 +195,7 @@ int main()
     return 0;
 }
 
+/*
 //For interchanging diagonals of array
 #include <stdio.h>
 int main()
@@ -239,3 +240,4 @@ int main()
         printf("\n");
     }
 }
+*/
