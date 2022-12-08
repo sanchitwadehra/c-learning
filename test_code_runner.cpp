@@ -10,9 +10,11 @@ int sglen(char s1[]){
 char sgrev(char s1[]){
     char s2[sglen(s1)];
     for(int i=0;s1[i]!='\0';i++){
-        s1[i]=s2[(sglen(s1))-1-i];
+        s2[(sglen(s1))-1-i]=s1[i];
     }
-    return s2;
+    printf("String Reverse = ");
+    puts(s2);
+    return 0;
 }
 int main()
 {
@@ -33,7 +35,7 @@ int main()
     }
     case 2:
     {
-        printf("String Reverse = %s", strrev(s1));
+        sgrev(s1);
         break;
     }
     case 3:
