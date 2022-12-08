@@ -211,6 +211,7 @@ int fact(int num){
 */
 
 /*
+Multiplication table using recursion :-
 #include<stdio.h>
 int loop(int,int);
 int main(){
