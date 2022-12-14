@@ -50,7 +50,6 @@ int main(){
   q=b;
   p=b;
   //now p & q are on the first element
-  //an extra varibale for performing swapping
   for(int i=0;i<a;i++){
     if(*p<*q){
       p=q;
