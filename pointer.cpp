@@ -18,5 +18,6 @@ int main(){
   printf("%d \n",p);
   printf("%d \n",*p);
   printf("%d \n",&a);
+  printf("%d \n",sizeof(p));
   return 0;
 }
