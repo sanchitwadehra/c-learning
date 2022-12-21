@@ -1,8 +1,6 @@
-//store 2 cars information
-//make a record of a 5 students of a class storing marks information 
 #include<stdio.h>
 #include<string.h>
-struct record
+struct personal
 {
     int sn;
     char name[50];
@@ -15,7 +13,7 @@ int main(){
     char a;
     printf("How many data entries do you want to have for persons:- \n");
     scanf("%d",&n);
-     struct record s[n];
+     struct personal s[n];
     for(int i=0;i<n;i++){
         s[i].sn=(i+1);
         printf("Enter the name of the person number %d :- \n",(i+1));
@@ -30,7 +28,7 @@ int main(){
     }
     printf("\n Printing the dataset entered below :- \n");
     for(int i=0;i<n;i++){
-        //struct record s[i];
+        //struct personal s[i];
         printf("S.No. :- %d \n",s[i].sn);
         printf("Name :- ");
         puts(s[i].name);
