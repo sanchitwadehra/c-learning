@@ -22,9 +22,9 @@ void sgrev(char s1[])
 }
 void sgcat(char s2[], char s1[])
 {
-    int i,j;
-    char s3[(sglen(s1)) + (sglen(s2))+1];
-    for ( i = 0; s1[i] != '\0'; i++)
+    int i, j;
+    char s3[(sglen(s1)) + (sglen(s2)) + 1];
+    for (i = 0; s1[i] != '\0'; i++)
     {
         s3[i] = s1[i];
     }
@@ -32,10 +32,10 @@ void sgcat(char s2[], char s1[])
     {
         s3[(sglen(s1)) + j] = s2[j];
     }
-    s3[i+j]='\0';
+    s3[i + j] = '\0';
     puts(s3);
     // fputs(s3,stdin);
-}   
+}
 int main()
 {
     int a, b;

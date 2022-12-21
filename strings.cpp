@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-//IMPORTANT :-
-//IF WE HAVE TWO STRINGS S1 & S2
-//THEN WE CAN'T ASSIGN S2=S1 OR S1=S2
+// IMPORTANT :-
+// IF WE HAVE TWO STRINGS S1 & S2
+// THEN WE CAN'T ASSIGN S2=S1 OR S1=S2
 int sglen(char s1[])
 {
     int c = 0;
@@ -25,9 +25,9 @@ void sgrev(char s1[])
 }
 void sgcat(char s2[], char s1[])
 {
-    int i,j;
-    char s3[(sglen(s1)) + (sglen(s2))+1];
-    for ( i = 0; s1[i] != '\0'; i++)
+    int i, j;
+    char s3[(sglen(s1)) + (sglen(s2)) + 1];
+    for (i = 0; s1[i] != '\0'; i++)
     {
         s3[i] = s1[i];
     }
@@ -35,10 +35,10 @@ void sgcat(char s2[], char s1[])
     {
         s3[(sglen(s1)) + j] = s2[j];
     }
-    s3[i+j]='\0';
+    s3[i + j] = '\0';
     puts(s3);
     // fputs(s3,stdin);
-}   
+}
 int main()
 {
     int a, b;
@@ -67,7 +67,7 @@ int main()
     {
         char c;
         printf("Enter the target string.\n");
-        scanf("%c", &c);// This added to avoid taking enter as a character into gets 
+        scanf("%c", &c); // This added to avoid taking enter as a character into gets
         gets(s2);
         puts(s2);
         // fgets(s2,sizeof(s2),stdin);
