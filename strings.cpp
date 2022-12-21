@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <string.h>
+//IMPORTANT :-
+//IF WE HAVE TWO STRINGS S1 & S2
+//THEN WE CAN'T ASSIGN S2=S1 OR S1=S2
 int sglen(char s1[])
 {
     int c = 0;
