@@ -21,6 +21,7 @@ int main(){
         printf("Enter the name of the person number %d :- \n",(i+1));
         scanf("%c",&a);
         gets(name_s);
+        //becoase assignment operator doesn't work for strings
         strcpy(s[i].name,name_s);
         printf("Enter the date of joining :- \n");
         scanf("%d",&s[i].doj);
