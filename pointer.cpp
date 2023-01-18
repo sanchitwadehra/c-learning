@@ -1,5 +1,17 @@
 #include<stdio.h>
 #include<string.h>
+/* RUN THIS PROGRAM FOR UNDERSTANDING SPECIFIERS FOR ADDRESSES
+#include<stdio.h>
+int main(){
+    int a=32;
+    printf("%d \n",a);
+    printf("%d \n",&a);
+    printf("%d \n",&a+1);
+    printf("%x \n",&a+1);
+    printf("%p \n",&a);
+    return 0;
+}
+*/
 int main(){
   int a;
   printf("Enter the size of array you want :- \n");
