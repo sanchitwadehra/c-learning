@@ -8,7 +8,6 @@ int main(){
     printf("%d \n",&a+1);
     printf("%x \n",&a+1);
     printf("%p \n",&a);
-
     printf("%x \n",p);
     return 0;
 }
