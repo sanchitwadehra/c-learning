@@ -57,14 +57,10 @@ int DiningHall::totalSeats = 50;
 int main()
 {
     // create some objects of DiningHall class with names of guests
-    DiningHall g1("Alice");
-    DiningHall g2("Bob");
-    DiningHall g3("Charlie");
+    DiningHall g1("Sanchit");
 
     // display their details using display function
     g1.display();
-    g2.display();
-    g3.display();
 
     return 0;
 }
