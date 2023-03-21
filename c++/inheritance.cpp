@@ -1,60 +1,80 @@
-//WAP that takes information aboutindstitutional staff employee code,subject,publication    officer code,name,grade  typist code,name,typing speed,daily wages   display it using multiple inheritance
 #include<iostream>
 using namespace std;
-class teacher{
+class student{
+    protected:
+    int uid;
+    int numb;
     public:
-    string employee_code;
-    string subject;
-    int publications;
-    void show(){
-        cout<<"Teacher Details :- "<<endl;
-        cout<<"employee code :- "<<employee_code<<endl;
-        cout<<"subject :- "<<subject<<endl;
-        cout<<"publications :- "<<publications<<endl;
-        cout<<endl;
+    void get_number(){
+        cout<<"uid :- "<<endl;
+        cin>>uid;
+        cout<<"number :- "<<endl;
+        cin>>numb;
+    }
+    void put_number(){
+        cout<<"uid :- "<<uid<<endl;
+        cout<<"number :- "<<numb<<endl;
     }
 };
-class officer{
+class test:virtual public student{
+    protected:
+    int maths_marks;
+    int science_marks;
     public:
-    string officer_code;
-    string officer_name;
-    string grade;
-    void show(){
-        cout<<"Officer Details :- "<<endl;
-        cout<<"Code :- "<<officer_code<<endl;
-        cout<<"name :- "<<officer_name<<endl;
-        cout<<"grade :- "<<grade<<endl;
-        cout<<endl;
+    void get_marks(){
+        cout<<"Maths Marks :- "<<endl;
+        cin>>maths_marks;
+        cout<<"Science Marks :- "<<endl;
+        cin>>science_marks;
+    }
+    void put_marks(){
+        cout<<"Maths Marks :- "<<maths_marks<<endl;
+        cout<<"Science Marks :- "<<science_marks<<endl; 
     }
 };
-class typist:public teacher,public officer{
+class sport:virtual public student{
+    protected:
+    int football_score;
+    int cricket_score;
     public:
-    string typist_name;
-    int typ_speed;
-    int daily_wages;
-    void show(){
-        
-        teacher::show();
-        officer::show();
-        
-        cout<<"Typist Details :- "<<endl;
-        cout<<"Name :- "<<typist_name<<endl;
-        cout<<"speed :- "<<typ_speed<<endl;
-        cout<<"Daily Wages :- "<<daily_wages<<endl;
-        cout<<endl;
+    void get_score(){
+        cout<<"Football Score :- "<<endl;
+        cin>>football_score;
+        cout<<"Cricket Score :- "<<endl;
+        cin>>cricket_score;
+    }
+    void put_score(){
+        cout<<"Football Score :- "<<football_score<<endl;
+        cout<<"Cricket Score :- "<<cricket_score<<endl;
+    }
+};
+class result:public test,public sport{
+    public:
+    void input(){
+        cout<<"Details :- "<<endl;
+        get_number();
+        cout<<"Marks :- "<<endl;
+        get_marks();
+        cout<<"Score :- "<<endl;
+        get_score();
+    }
+    void display(){
+        cout<<endl<<endl;
+        cout<<"Details :- "<<endl;
+        put_number();
+        cout<<"Marks :- "<<endl;
+        put_marks();
+        cout<<"Score :- "<<endl;
+        put_score();
+        cout<<"Total :- "<<endl;
+        int total;
+        total=maths_marks+science_marks+football_score+cricket_score;
+        cout<<total<<endl;
     }
 };
 int main(){
-    typist obj;
-    obj.employee_code="Abc5432";
-    obj.subject="Maths";
-    obj.publications=5;
-    obj.officer_code="ncsik456";
-    obj.officer_name="Sanchit";
-    obj.grade="A";
-    obj.typist_name="Vishwanath";
-    obj.typ_speed=80;
-    obj.daily_wages=1500;
-    obj.show();
+    result s1;
+    s1.input();
+    s1.display();
     return 0;
 }
