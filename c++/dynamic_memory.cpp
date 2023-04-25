@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+/*
 class A{
    
     int* p1;
@@ -39,5 +40,22 @@ int main(){
     A a;
     a.get();
     a.display();
+    return 0;
+}
+*/
+//WAP to allocate memory dynamically for an object of a given class using class constructor 
+class A{
+    int n;
+    public:
+    A(){
+        cout<<"constructor called"<<endl;
+    }
+    ~A(){
+        cout<<"destructor Called"<<endl;
+    }
+};
+int main(){
+    A* ptr=new A[2];
+    delete []ptr;
     return 0;
 }
