@@ -48,4 +48,3 @@ int main(){
 }
 //WAP to read the content of a file using >> operator
 //WAP to read multiple lines from the file stud.txt
-
