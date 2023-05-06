@@ -48,3 +48,10 @@ int main(){
 }
 //WAP to read the content of a file using >> operator
 //WAP to read multiple lines from the file stud.txt
+/*
+What is a  file pointer ?
+seekg It moves the getfile pointer to a specific location
+tellg returns the current position of get file pointer 
+seekp It moves the put pointer to a specific location
+tellp returns the current position of put file pointer
+*/
