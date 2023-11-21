@@ -18,15 +18,18 @@ class user: public human{
     
 };
 
-class staff{
+class staff: public human{
 
 };
 
-class author{
+class author: public human{
 
 };
 
 int main(){
-    
+    int n;
+    cout<<"Welcome to LMS\n";
+    cout<<"How can I help you?\n";
+    cout<<"1. Get a book issued\n2. ";
     return 0;
 }
