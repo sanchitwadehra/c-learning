@@ -24,6 +24,24 @@ class issued{
     int issuing_ID;
     int book_ID;
     int number_of_copies_issued;
+    int number_of_days_issued;
+    string date_issued_on;
+};
+
+class issue_request{
+    int request_ID;
+    vector<int> book_IDs;
+    vector<int> copies_for_each;
+    string number_of_days;
+    bool approval_status;
+};
+
+class last_ID_used{
+    int student_ID;
+    int staff_ID;
+    int book_ID;
+    int issuing_ID;
+    int request_ID;
 };
 
 class student: public human{
