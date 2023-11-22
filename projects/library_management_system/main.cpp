@@ -1,16 +1,18 @@
-#include<iostream>
-#include<vector>
-#include<algorithm>
+#include <iostream>
+#include <vector>
+#include <algorithm>
 using namespace std;
 
-class human{
+class Human {
+public:
     string name;
     int age;
     char gender;
-    int phone_number[10];
+    vector<string> phone_numbers;
 };
 
-class book{
+class Book {
+public:
     string name;
     vector<int> author_IDs;
     int page_length;
@@ -20,7 +22,8 @@ class book{
     vector<string> tags;
 };
 
-class issued{
+class Issued {
+public:
     int issuing_ID;
     int book_ID;
     int number_of_copies_issued;
@@ -28,7 +31,8 @@ class issued{
     string date_issued_on;
 };
 
-class issue_request{
+class IssueRequest {
+public:
     int request_ID;
     vector<int> book_IDs;
     vector<int> copies_for_each;
@@ -36,7 +40,8 @@ class issue_request{
     bool approval_status;
 };
 
-class last_ID_used{
+class LastIDUsed {
+public:
     int student_ID;
     int staff_ID;
     int book_ID;
@@ -44,37 +49,41 @@ class last_ID_used{
     int request_ID;
 };
 
-class student: public human{
+class Student : public Human {
+public:
     int student_ID;
     vector<int> issuing_IDs;
 };
 
-class staff: public human{
+class Staff : public Human {
+public:
     int staff_ID;
 };
 
-class author: public human{
+class Author : public Human {
+public:
     int author_ID;
     vector<int> book_IDs;
-    vector<pair<string,int>> tags_by_frequency;
+    vector<pair<string, int>> tags_by_frequency;
 };
 
-int main(){
+int main() {
     int n;
-    cout<<"Welcome to LMS\n";
-    cout<<"You are a student or a staff member?\n";
-    cout<<"1. Student\n2. Staff\n";
-    cin>>n;
-    switch(n){
+    cout << "Welcome to LMS\n";
+    cout << "Are you a student or a staff member?\n";
+    cout << "1. Student\n2. Staff\n";
+    cin >> n;
+    switch (n) {
         case 1: {
-            cout<<"Hi great to have you here\n";
+            cout << "Hi, great to have you here\n";
             break;
         }
         case 2: {
             break;
         }
         default: {
-
+            // Handle invalid input
+            cout << "Invalid choice\n";
         }
     }
     return 0;
