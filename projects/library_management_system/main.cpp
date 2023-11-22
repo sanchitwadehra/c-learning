@@ -67,13 +67,14 @@ int main(){
     cin>>n;
     switch(n){
         case 1: {
+            cout<<"Hi great to have you here\n";
             break;
         }
         case 2: {
             break;
         }
         default: {
-            
+
         }
     }
     return 0;
