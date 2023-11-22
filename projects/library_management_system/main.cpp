@@ -62,7 +62,7 @@ class author: public human{
 int main(){
     int n;
     cout<<"Welcome to LMS\n";
-    cout<<"How can I help you?\n";
-    cout<<"1. Get a book issued\n2. ";
+    cout<<"You are a student or a staff member?\n";
+    cout<<"1. Student\n2. Staff\n";
     return 0;
 }
