@@ -64,5 +64,17 @@ int main(){
     cout<<"Welcome to LMS\n";
     cout<<"You are a student or a staff member?\n";
     cout<<"1. Student\n2. Staff\n";
+    cin>>n;
+    switch(n){
+        case 1: {
+            break;
+        }
+        case 2: {
+            break;
+        }
+        default: {
+            
+        }
+    }
     return 0;
 }
