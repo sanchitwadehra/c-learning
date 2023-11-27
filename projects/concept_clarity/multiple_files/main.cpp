@@ -7,6 +7,7 @@ int main(){
 }
 
 /*
+https://chat.openai.com/share/5a9bcb7e-6314-4daa-9ebe-b8313f2031db
 To run it use these commands 
 g++ main.cpp display.cpp -o main
 if ($?) { .\main }
