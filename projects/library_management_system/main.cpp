@@ -1,6 +1,8 @@
 #include "sample_data.cpp"
 int main()
 {
+    sample_data();
+    sorting();
     int n;
     cout << "Welcome to LMS\n";
     cout << "Are you a student or a staff member?\n";

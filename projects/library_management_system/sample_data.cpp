@@ -135,13 +135,13 @@ bool compareTags(const Tags &a, const Tags &b) {
 
 void sorting()
 {
-    std::sort(library.students.begin(), library.students.end(), compareStudents);
+    sort(library.students.begin(), library.students.end(), compareStudents);
 
-    std::sort(library.books.begin(), library.books.end(), compareBooks);
+    sort(library.books.begin(), library.books.end(), compareBooks);
 
-    std::sort(library.staffs.begin(), library.staffs.end(), compareStaff);
+    sort(library.staffs.begin(), library.staffs.end(), compareStaff);
 
-    std::sort(library.authors.begin(), library.authors.end(), compareAuthors);
+    sort(library.authors.begin(), library.authors.end(), compareAuthors);
 
-    std::sort(library.tags.begin(), library.tags.end(), compareTags);
+    sort(library.tags.begin(), library.tags.end(), compareTags);
 }
