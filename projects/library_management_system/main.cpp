@@ -1,6 +1,4 @@
-#include <algorithm>
-#include "classes.cpp"
-
+#include "data.cpp"
 int main() {
     int n;
     cout << "Welcome to LMS\n";

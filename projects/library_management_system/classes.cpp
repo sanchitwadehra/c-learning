@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include <algorithm>
 using namespace std;
 class Human {
 public:
@@ -64,3 +65,4 @@ public:
     vector<int> book_IDs;
     vector<pair<string, int>> tags_by_frequency;
 };
+
