@@ -13,7 +13,7 @@ void sample_data()
 
     Staff staff1;
     staff1.name = "Simran";
-    staff1.age = 28;
+    staff1.age = 21;
     staff1.gender = 'F';
     staff1.staff_ID = 1;
     staff1.phone_numbers = {"9998887776"};
