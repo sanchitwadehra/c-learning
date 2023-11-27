@@ -46,4 +46,11 @@ void data()
     request1.copies_for_each = {2};
     request1.number_of_days = "7";
     request1.approval_status = false;
+
+    LastIDUsed basic;
+    basic.student_ID=1;
+    basic.staff_ID=1;
+    basic.book_ID=2;
+    basic.issuing_ID=1;
+    basic.request_ID=1;
 }
