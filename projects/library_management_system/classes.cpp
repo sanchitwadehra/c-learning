@@ -73,3 +73,18 @@ public:
     int issuing_ID;
     int request_ID;
 };
+
+class Tags{
+    string Tag_name;
+};
+
+class Storage{
+    public:
+    vector<Student> students;
+    vector<Book> books;
+    vector<Staff> staffs;
+    vector<Author> authors;
+    vector<Issued> issues;
+    vector<IssueRequest> requests;
+    vector<Tags> tags;
+};

@@ -5,14 +5,14 @@ void data()
     student1.name = "Raj";
     student1.age = 20;
     student1.gender = 'M';
-    student1.student_ID = 1; // Updated ID
+    student1.student_ID = 1;
     student1.phone_numbers = {"1234567890", "9876543210"};
 
     Staff staff1;
     staff1.name = "Simran";
     staff1.age = 28;
     staff1.gender = 'F';
-    staff1.staff_ID = 1; // Updated ID
+    staff1.staff_ID = 1;
     staff1.phone_numbers = {"9998887776"};
 
     Book book1;
@@ -53,4 +53,22 @@ void data()
     basic.book_ID = 2;
     basic.issuing_ID = 1;
     basic.request_ID = 1;
+
+    Author author1;
+    author1.name = "Paulo Coelho";
+    author1.age = 74;
+    author1.gender = 'M';
+    author1.author_ID = 1;
+    author1.phone_numbers = {"9876543210"};
+    author1.book_IDs = {1};
+    author1.tags_by_frequency = {{"Fiction", 1}, {"Philosophy", 1}};
+
+    Author author2;
+    author2.name = "F. Scott Fitzgerald";
+    author2.age = 44;
+    author2.gender = 'M';
+    author2.author_ID = 2;
+    author2.phone_numbers = {"9998887776"};
+    author2.book_IDs = {2};
+    author2.tags_by_frequency = {{"Classic", 1}, {"Drama", 1}};
 }
