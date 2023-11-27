@@ -2,7 +2,7 @@
 #include "header.h"
 using namespace std;
 int main(){
-    cout<<"nbkd"<<endl;
+    cout<<"Namaste"<<endl;
     display();
 }
 
