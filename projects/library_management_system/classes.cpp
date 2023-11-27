@@ -1,8 +1,9 @@
-#include<iostream>
-#include<vector>
+#include <iostream>
+#include <vector>
 #include <algorithm>
 using namespace std;
-class Human {
+class Human
+{
 public:
     string name;
     int age;
@@ -10,7 +11,29 @@ public:
     vector<string> phone_numbers;
 };
 
-class Book {
+class Student : public Human
+{
+public:
+    int student_ID;
+    vector<int> issuing_IDs;
+};
+
+class Staff : public Human
+{
+public:
+    int staff_ID;
+};
+
+class Author : public Human
+{
+public:
+    int author_ID;
+    vector<int> book_IDs;
+    vector<pair<string, int>> tags_by_frequency;
+};
+
+class Book
+{
 public:
     string name;
     vector<int> author_IDs;
@@ -21,7 +44,8 @@ public:
     vector<string> tags;
 };
 
-class Issued {
+class Issued
+{
 public:
     int issuing_ID;
     int book_ID;
@@ -30,7 +54,8 @@ public:
     string date_issued_on;
 };
 
-class IssueRequest {
+class IssueRequest
+{
 public:
     int request_ID;
     vector<int> book_IDs;
@@ -39,7 +64,8 @@ public:
     bool approval_status;
 };
 
-class LastIDUsed {
+class LastIDUsed
+{
 public:
     int student_ID;
     int staff_ID;
@@ -47,22 +73,3 @@ public:
     int issuing_ID;
     int request_ID;
 };
-
-class Student : public Human {
-public:
-    int student_ID;
-    vector<int> issuing_IDs;
-};
-
-class Staff : public Human {
-public:
-    int staff_ID;
-};
-
-class Author : public Human {
-public:
-    int author_ID;
-    vector<int> book_IDs;
-    vector<pair<string, int>> tags_by_frequency;
-};
-
