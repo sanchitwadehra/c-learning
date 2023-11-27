@@ -77,7 +77,7 @@ public:
 class Tags
 {
 public:
-    string Tag_name;
+    string name;
     vector<int> book_IDs;
     vector<int> author_IDs;
 };

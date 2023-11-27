@@ -1,4 +1,7 @@
 #include "classes.cpp"
+
+Storage library;
+
 void sample_data()
 {
     Student student1;
@@ -73,26 +76,25 @@ void sample_data()
     author2.tags_by_frequency = {{"Classic", 1}, {"Drama", 1}};
 
     Tags tag1;
-    tag1.Tag_name = "Fiction";
+    tag1.name = "Fiction";
     tag1.book_IDs = {1};
     tag1.author_IDs = {1};
 
     Tags tag2;
-    tag2.Tag_name = "Philosophy";
+    tag2.name = "Philosophy";
     tag2.book_IDs = {1};
     tag2.author_IDs = {1};
 
     Tags tag3;
-    tag1.Tag_name = "Classic";
+    tag1.name = "Classic";
     tag1.book_IDs = {2};
     tag1.author_IDs = {2};
 
     Tags tag4;
-    tag2.Tag_name = "Drama";
+    tag2.name = "Drama";
     tag2.book_IDs = {2};
     tag2.author_IDs = {2};
 
-    Storage library;
     library.students.push_back(student1);
     library.staffs.push_back(staff1);
     library.books.push_back(book1);
@@ -105,4 +107,41 @@ void sample_data()
     library.tags.push_back(tag2);
     library.tags.push_back(tag3);
     library.tags.push_back(tag4);
+}
+
+bool compareStudents(const Student &a, const Student &b)
+{
+    return a.name < b.name;
+}
+
+bool compareBooks(const Book &a, const Book &b)
+{
+    return a.name < b.name;
+}
+
+bool compareStaff(const Staff &a, const Staff &b)
+{
+    return a.name < b.name;
+}
+
+bool compareAuthors(const Author &a, const Author &b)
+{
+    return a.name < b.name;
+}
+
+bool compareTags(const Tags &a, const Tags &b) {
+    return a.name < b.name;
+}
+
+void sorting()
+{
+    std::sort(library.students.begin(), library.students.end(), compareStudents);
+
+    std::sort(library.books.begin(), library.books.end(), compareBooks);
+
+    std::sort(library.staffs.begin(), library.staffs.end(), compareStaff);
+
+    std::sort(library.authors.begin(), library.authors.end(), compareAuthors);
+
+    std::sort(library.tags.begin(), library.tags.end(), compareTags);
 }
