@@ -12,11 +12,12 @@ int main()
     {
     case 1:
     {
-        cout << "Hi, great to have you here\n";
+        student();
         break;
     }
     case 2:
     {
+        staff();
         break;
     }
     default:
