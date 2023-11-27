@@ -1,5 +1,5 @@
 #include "classes.cpp"
-void data()
+void sample_data()
 {
     Student student1;
     student1.name = "Raj";
@@ -71,4 +71,38 @@ void data()
     author2.phone_numbers = {"9998887776"};
     author2.book_IDs = {2};
     author2.tags_by_frequency = {{"Classic", 1}, {"Drama", 1}};
+
+    Tags tag1;
+    tag1.Tag_name = "Fiction";
+    tag1.book_IDs = {1};
+    tag1.author_IDs = {1};
+
+    Tags tag2;
+    tag2.Tag_name = "Philosophy";
+    tag2.book_IDs = {1};
+    tag2.author_IDs = {1};
+
+    Tags tag3;
+    tag1.Tag_name = "Classic";
+    tag1.book_IDs = {2};
+    tag1.author_IDs = {2};
+
+    Tags tag4;
+    tag2.Tag_name = "Drama";
+    tag2.book_IDs = {2};
+    tag2.author_IDs = {2};
+
+    Storage library;
+    library.students.push_back(student1);
+    library.staffs.push_back(staff1);
+    library.books.push_back(book1);
+    library.books.push_back(book2);
+    library.authors.push_back(author1);
+    library.authors.push_back(author2);
+    library.issues.push_back(issuedBook1);
+    library.requests.push_back(request1);
+    library.tags.push_back(tag1);
+    library.tags.push_back(tag2);
+    library.tags.push_back(tag3);
+    library.tags.push_back(tag4);
 }

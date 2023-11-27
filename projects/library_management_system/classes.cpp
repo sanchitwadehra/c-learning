@@ -74,12 +74,17 @@ public:
     int request_ID;
 };
 
-class Tags{
+class Tags
+{
+public:
     string Tag_name;
+    vector<int> book_IDs;
+    vector<int> author_IDs;
 };
 
-class Storage{
-    public:
+class Storage
+{
+public:
     vector<Student> students;
     vector<Book> books;
     vector<Staff> staffs;

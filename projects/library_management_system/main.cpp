@@ -1,4 +1,4 @@
-#include "data.cpp"
+#include "sample_data.cpp"
 int main()
 {
     int n;
