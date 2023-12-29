@@ -10,7 +10,8 @@ void student()
     {
         cout<<"Please enter the name of the book.\n";
         cin >> s;
-        
+        Book temp=closestObject(library.books,s);
+        temp.printData();
     }
     else
     {

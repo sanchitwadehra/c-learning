@@ -1,5 +1,5 @@
 #include "sample_data.cpp"
-string closestElement(vector<string>& arr, string target) {
+Book closestObject(vector<Book>& arr, string target) {
     int left = 0;
     int right = arr.size() - 1;
     int closestIndex = -1; // To store index of closest match
@@ -8,16 +8,16 @@ string closestElement(vector<string>& arr, string target) {
         int mid = left + (right - left) / 2;
 
         // Update closestIndex if found a closer match
-        if (closestIndex == -1 || abs((int)(arr[mid].length() - target.length())) < abs((int)(arr[closestIndex].length() - target.length()))) {
+        if (closestIndex == -1 || abs((int)(arr[mid].name.length() - target.length())) < abs((int)(arr[closestIndex].name.length() - target.length()))) {
             closestIndex = mid;
         }
 
         // Check if target is present at mid
-        if (arr[mid] == target) {
-            return arr[mid];
+        if (arr[mid].name == target) {
+            return arr[mid]; // Return the object matching the target name
         }
         // If target is greater, update left pointer
-        else if (arr[mid] < target) {
+        else if (arr[mid].name < target) {
             left = mid + 1;
         }
         // If target is smaller, update right pointer
@@ -26,6 +26,6 @@ string closestElement(vector<string>& arr, string target) {
         }
     }
 
-    // Return the closest matching element found
+    // Return the closest matching object found
     return arr[closestIndex];
 }
