@@ -129,7 +129,8 @@ bool compareAuthors(const Author &a, const Author &b)
     return a.name < b.name;
 }
 
-bool compareTags(const Tags &a, const Tags &b) {
+bool compareTags(const Tags &a, const Tags &b)
+{
     return a.name < b.name;
 }
 

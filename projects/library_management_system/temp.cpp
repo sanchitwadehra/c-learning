@@ -13,12 +13,14 @@ public:
     char gender;
     vector<string> phone_numbers;
 
-    void printData() {
+    void printData()
+    {
         cout << "Name: " << name << endl;
         cout << "Age: " << age << endl;
         cout << "Gender: " << gender << endl;
         cout << "Phone Numbers: ";
-        for (const auto& number : phone_numbers) {
+        for (const auto &number : phone_numbers)
+        {
             cout << number << " ";
         }
         cout << endl;
@@ -31,11 +33,13 @@ public:
     int student_ID;
     vector<int> issuing_IDs;
 
-    void printData() {
+    void printData()
+    {
         Human::printData();
         cout << "Student ID: " << student_ID << endl;
         cout << "Issuing IDs: ";
-        for (const auto& id : issuing_IDs) {
+        for (const auto &id : issuing_IDs)
+        {
             cout << id << " ";
         }
         cout << endl;
@@ -44,7 +48,8 @@ public:
 
 // Define printData functions for other classes similarly...
 
-int main() {
+int main()
+{
     // Create instances of your classes and call printData to display their data
     // Example:
     Student studentObj;

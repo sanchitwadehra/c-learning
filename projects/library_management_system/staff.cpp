@@ -1,4 +1,4 @@
 #include "student.cpp"
-void staff(){
-    
+void staff()
+{
 }
