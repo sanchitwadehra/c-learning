@@ -12,10 +12,11 @@ void student()
         cin >> s;
         Book temp = closestObject(library.books, s);
         temp.printData();
-        cout << "Do you want to get the book or try and search again? (y/n)\n";
+        cout << "Do you want to get the book issued or try and search again? (y/n)\n";
         cin >> i;
         if (i == 'y' || i == 'Y')
         {
+            
         }
         else
         {

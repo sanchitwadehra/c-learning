@@ -1,67 +1,50 @@
 #include <iostream>
 #include <vector>
+#include <string>
 #include <algorithm>
-using namespace std;
 
-// Define your classes here...
-
-class Human
-{
-public:
-    string name;
-    int age;
-    char gender;
-    vector<string> phone_numbers;
-
-    void printData()
-    {
-        cout << "Name: " << name << endl;
-        cout << "Age: " << age << endl;
-        cout << "Gender: " << gender << endl;
-        cout << "Phone Numbers: ";
-        for (const auto &number : phone_numbers)
-        {
-            cout << number << " ";
-        }
-        cout << endl;
-    }
+struct Book {
+    std::string name;
+    // Any other members
 };
 
-class Student : public Human
-{
-public:
-    int student_ID;
-    vector<int> issuing_IDs;
-
-    void printData()
-    {
-        Human::printData();
-        cout << "Student ID: " << student_ID << endl;
-        cout << "Issuing IDs: ";
-        for (const auto &id : issuing_IDs)
-        {
-            cout << id << " ";
+int matchingCharacters(const std::string& str1, const std::string& str2) {
+    int count = 0;
+    for (size_t i = 0; i < std::min(str1.length(), str2.length()); ++i) {
+        if (str1[i] == str2[i]) {
+            count++;
+        } else {
+            break;
         }
-        cout << endl;
     }
-};
+    return count;
+}
 
-// Define printData functions for other classes similarly...
+Book findBestMatch(const std::vector<Book>& arr, const std::string& target) {
+    Book bestMatch;
+    int maxMatch = 0;
 
-int main()
-{
-    // Create instances of your classes and call printData to display their data
-    // Example:
-    Student studentObj;
-    studentObj.name = "John Doe";
-    studentObj.age = 20;
-    studentObj.gender = 'M';
-    studentObj.phone_numbers = {"1234567890", "9876543210"};
-    studentObj.student_ID = 1001;
-    studentObj.issuing_IDs = {101, 102, 103};
+    for (const Book& book : arr) {
+        int currMatch = matchingCharacters(book.name, target);
+        if (currMatch > maxMatch) {
+            maxMatch = currMatch;
+            bestMatch = book;
+        }
+    }
 
-    // Call printData function to display data
-    studentObj.printData();
+    return bestMatch;
+}
+
+int main() {
+    std::vector<Book> arr = {
+        {"The Alchemist"},
+        {"The Great Gatsby"}
+    };
+
+    std::string target = "Great"; // Target string
+
+    Book bestBook = findBestMatch(arr, target);
+    std::cout << "Best match: " << bestBook.name << std::endl;
 
     return 0;
 }
