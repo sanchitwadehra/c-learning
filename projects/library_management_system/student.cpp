@@ -10,7 +10,7 @@ void student()
     f:
         cout << "Please enter the name of the book.\n";
         getline(cin >> ws, s);
-        //Read this :- https://stackoverflow.com/questions/70138063/why-do-cin-and-getline-exhibit-different-reading-behavior
+        // Read this :- https://stackoverflow.com/questions/70138063/why-do-cin-and-getline-exhibit-different-reading-behavior
         cout << s << endl;
         Book temp = closestObject(library.books, s);
         temp.printData();
