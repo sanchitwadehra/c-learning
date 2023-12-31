@@ -2,17 +2,18 @@
 #include <vector>
 #include <string>
 #include <algorithm>
+using namespace std;
 
 struct Book
 {
-    std::string name;
+    string name;
     // Any other members
 };
 
-int matchingCharacters(const std::string &str1, const std::string &str2)
+int matchingCharacters(const string &str1, const string &str2)
 {
     int count = 0;
-    for (size_t i = 0; i < std::min(str1.length(), str2.length()); ++i)
+    for (size_t i = 0; i < min(str1.length(), str2.length()); ++i)
     {
         if (str1[i] == str2[i])
         {
@@ -26,7 +27,7 @@ int matchingCharacters(const std::string &str1, const std::string &str2)
     return count;
 }
 
-Book findBestMatch(const std::vector<Book> &arr, const std::string &target)
+Book findBestMatch(const vector<Book> &arr, const string &target)
 {
     Book bestMatch;
     int maxMatch = 0;
@@ -46,14 +47,14 @@ Book findBestMatch(const std::vector<Book> &arr, const std::string &target)
 
 int main()
 {
-    std::vector<Book> arr = {
+    vector<Book> arr = {
         {"The Alchemist"},
         {"The Great Gatsby"}};
 
-    std::string target = "Great"; // Target string
+    string target = "Great"; // Target string
 
     Book bestBook = findBestMatch(arr, target);
-    std::cout << "Best match: " << bestBook.name << std::endl;
+    cout << "Best match: " << bestBook.name << endl;
 
     return 0;
 }

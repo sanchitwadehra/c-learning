@@ -1,6 +1,7 @@
 #include "issuing.cpp"
 int main()
 {
+    system("cls");
     sample_data();
     sorting();
     int n;
