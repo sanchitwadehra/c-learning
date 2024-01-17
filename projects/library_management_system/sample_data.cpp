@@ -20,6 +20,7 @@ void sample_data()
 
     Book book1;
     book1.name = "The Alchemist";
+    book1.book_ID = 1;
     book1.author_IDs = {1};
     book1.page_length = 208;
     book1.published_year = 1988;
@@ -29,6 +30,7 @@ void sample_data()
 
     Book book2;
     book2.name = "The Great Gatsby";
+    book2.book_ID = 2;
     book2.author_IDs = {2};
     book2.page_length = 180;
     book2.published_year = 1925;

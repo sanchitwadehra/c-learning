@@ -81,6 +81,7 @@ class Book
 {
 public:
     string name;
+    int book_ID;
     vector<int> author_IDs;
     int page_length;
     int published_year;
