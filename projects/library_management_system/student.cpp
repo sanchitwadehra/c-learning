@@ -14,6 +14,7 @@ void student()
         getline(cin >> ws, s);
         // Read this :- https://stackoverflow.com/questions/70138063/why-do-cin-and-getline-exhibit-different-reading-behavior
         Book temp = closestObject(library.books, s);
+        system("cls");
         temp.printData();
         cout << "Do you want to get the book issued or try and search again? (y/n)\n";
         cin >> i;
