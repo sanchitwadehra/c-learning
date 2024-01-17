@@ -21,7 +21,7 @@ void student()
         if (i == 'y' || i == 'Y')
         {
             system("cls");
-            library.printData();
+            
         }
         else
         {
