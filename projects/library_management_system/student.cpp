@@ -20,6 +20,8 @@ void student()
         cin >> i;
         if (i == 'y' || i == 'Y')
         {
+            system("cls");
+            library.printData();
         }
         else
         {
