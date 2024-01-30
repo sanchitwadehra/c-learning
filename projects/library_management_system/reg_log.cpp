@@ -1,7 +1,13 @@
 #include "staff.cpp"
-void reg(){
+void reg_staff(){
     
 }
-void log(){
+void reg_student(){
     
+}
+void log_staff(){
+
+}
+void log_student(){
+
 }
