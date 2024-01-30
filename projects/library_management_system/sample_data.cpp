@@ -9,6 +9,7 @@ void sample_data()
     student1.age = 20;
     student1.gender = 'M';
     student1.student_ID = 1;
+    student1.student_pwd="a";
     student1.phone_numbers = {"1234567890", "9876543210"};
 
     Staff staff1;
@@ -16,6 +17,7 @@ void sample_data()
     staff1.age = 21;
     staff1.gender = 'F';
     staff1.staff_ID = 1;
+    staff1.staff_pwd="b";
     staff1.phone_numbers = {"9998887776"};
 
     Book book1;

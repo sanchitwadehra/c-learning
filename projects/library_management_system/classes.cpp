@@ -27,6 +27,7 @@ class Student : public Human
 {
 public:
     int student_ID;
+    string student_pwd;
     vector<int> issuing_IDs;
     void printData()
     {
@@ -45,6 +46,7 @@ class Staff : public Human
 {
 public:
     int staff_ID;
+    string staff_pwd;
     void printData()
     {
         Human::printData();
