@@ -2,3 +2,6 @@
 void reg(){
     
 }
+void log(){
+    
+}
