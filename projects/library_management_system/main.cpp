@@ -13,16 +13,19 @@ int main()
     {
     case 1:
     {
+        system("cls");
         student();
         break;
     }
     case 2:
     {
+        system("cls");
         staff();
         break;
     }
     case 3:
     {
+        system("cls");
         reg();
         break;
     }
