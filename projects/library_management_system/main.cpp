@@ -7,7 +7,7 @@ int main()
     int n;
     cout << "Welcome to LMS\n";
     cout << "Are you a student or a staff member?\n";
-    cout << "1. Student\n2. Staff\n";
+    cout << "1. Student\n2. Staff\n3. Register\n";
     cin >> n;
     switch (n)
     {
@@ -19,6 +19,11 @@ int main()
     case 2:
     {
         staff();
+        break;
+    }
+    case 3:
+    {
+        reg();
         break;
     }
     default:
