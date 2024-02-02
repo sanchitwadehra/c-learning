@@ -110,5 +110,10 @@ int main()
 
     } while (!exitProgram);
 
+    if (exitProgram)
+    {
+        return 0;
+    }
+
     return 0;
 }
