@@ -1,15 +1,35 @@
 #include <iostream>
-#include <vector>
-#include <string>
-#include <fstream>
 #include <stack>
 using namespace std;
+
+void displayBaseMenu()
+{
+    cout << "Base Menu:\n";
+    cout << "1. Staff\n";
+    cout << "2. Student\n";
+    cout << "Enter your choice (0 to exit): ";
+}
+
+void displayStaffMenu()
+{
+    cout << "Staff Menu:\n";
+    cout << "1. Pending Issue Requests\n";
+    cout << "2. Issuing History\n";
+    cout << "3. Add New Book\n";
+    cout << "Enter your choice (0 to go back): ";
+}
+
+void displayStudentMenu()
+{
+    cout << "Student Menu:\n";
+    cout << "1. Search Book\n";
+    cout << "2. Explore\n";
+    cout << "3. Return Book\n";
+    cout << "Enter your choice (0 to go back): ";
+}
+
 int main()
 {
-    //sample_data();
-    //sorting();
-    int n;
-
     stack<int> menuStack; // Stack to keep track of menu levels
     menuStack.push(0);    // Push the initial menu level
 
@@ -23,9 +43,8 @@ int main()
         {
         case 0:
             system("cls");
-            cout << "Welcome to LMS\n";
-            cout << "1. Register\n2. Login\n";
-            cout << "Enter your choice (0 to exit): ";
+            displayBaseMenu();
+            int n;
             cin >> n;
 
             switch (n)
@@ -40,65 +59,50 @@ int main()
                 break;
 
             default:
-                // Handle invalid input
                 cout << "Invalid choice\n";
             }
             break;
 
         case 1:
-        {
-            system("cls");
-            int n;
-            cout << "You chose to Register. What type of registration?\n";
-            cout << "1. Student Registration\n2. Staff Registration\n";
-            cout << "Enter your choice (0 to go back): ";
-            cin >> n;
-
-            switch (n)
-            {
-            case 0:
-                menuStack.pop(); // Go back to the previous menu
-                break;
-
-            case 1:
-                //reg_student();
-                break;
-
-            case 2:
-                //reg_staff();
-                break;
-
-            default:
-                cout << "Invalid choice for registration\n";
-            }
-            break;
-        }
-
         case 2:
         {
             system("cls");
-            int n;
-            cout << "You chose to Login. What type of login?\n";
-            cout << "1. Student Login\n2. Staff Login\n";
-            cout << "Enter your choice (0 to go back): ";
-            cin >> n;
+            int choice;
 
-            switch (n)
+            if (menuStack.size() == 2)
+                displayStaffMenu();
+            else
+                displayStudentMenu();
+
+            cin >> choice;
+
+            switch (choice)
             {
             case 0:
                 menuStack.pop(); // Go back to the previous menu
                 break;
 
             case 1:
-                //log_student();
+                // Handle staff or student specific functionality
                 break;
 
             case 2:
-                //log_staff();
+                // Handle staff or student specific functionality
+                break;
+
+            case 3:
+                if (menuStack.size() == 3 && menuStack.top() == 2)
+                {
+                    // Handle return book for student
+                }
+                else
+                {
+                    cout << "Invalid choice\n";
+                }
                 break;
 
             default:
-                cout << "Invalid choice for login\n";
+                cout << "Invalid choice\n";
             }
             break;
         }
