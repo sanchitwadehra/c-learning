@@ -1,2 +1,2 @@
-name,age,gender,student_ID,student_pwd,phone_number1
-Raj,20,M,1,a,1234567890
+name,age,gender,student_ID,student_pwd,phone_numbers
+Raj,20,M,1,a,{1234567890,9876543210}

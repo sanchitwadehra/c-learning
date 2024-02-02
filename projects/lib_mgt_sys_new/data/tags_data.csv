@@ -1,5 +1,5 @@
-name,book_ID,author_ID
-Fiction,1,1
-Philosophy,1,1
-Classic,2,2
-Drama,2,2
+name,book_IDs,author_IDs
+Fiction,{1},{1}
+Philosophy,{1},{1}
+Classic,{2},{2}
+Drama,{2},{2}

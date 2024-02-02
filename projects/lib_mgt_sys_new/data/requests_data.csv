@@ -1,2 +1,2 @@
-request_ID,book_ID,copies_for_each,number_of_days,approval_status
-1,2,2,7,Not Approved
+request_ID,book_IDs,copies_for_each,number_of_days,approval_status
+1,{2},{2},7,Not Approved
