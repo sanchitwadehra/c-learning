@@ -1,9 +1,20 @@
+#ifdef _WIN32
+    #define CLEAR "cls"
+#else //In any other OS
+    #define CLEAR "clear"
+#endif
+
 #include <iostream>
-#include <stack>
 using namespace std;
+
+void clearScreen()
+{
+    system(CLEAR);
+}
 
 void displayBaseMenu()
 {
+    clearScreen();
     cout << "Base Menu:\n";
     cout << "1. Staff\n";
     cout << "2. Student\n";
@@ -12,6 +23,7 @@ void displayBaseMenu()
 
 void displayStaffMenu()
 {
+    clearScreen();
     cout << "Staff Menu:\n";
     cout << "1. Pending Issue Requests\n";
     cout << "2. Issuing History\n";
@@ -21,6 +33,7 @@ void displayStaffMenu()
 
 void displayStudentMenu()
 {
+    clearScreen();
     cout << "Student Menu:\n";
     cout << "1. Search Book\n";
     cout << "2. Explore\n";
@@ -28,91 +41,77 @@ void displayStudentMenu()
     cout << "Enter your choice (0 to go back): ";
 }
 
+void displaySearchBookMenu()
+{
+    clearScreen();
+    cout << "Search Book Menu:\n";
+    cout << "1. By Title\n";
+    cout << "2. By Author\n";
+    cout << "Enter your choice (0 to go back): ";
+}
+
 int main()
 {
-    stack<int> menuStack; // Stack to keep track of menu levels
-    menuStack.push(0);    // Push the initial menu level
+    int baseChoice, staffChoice, studentChoice;
 
-    bool exitProgram = false;
-
-    do
+    while (true)
     {
-        int currentMenu = menuStack.top();
+        displayBaseMenu();
+        cin >> baseChoice;
 
-        switch (currentMenu)
-        {
-        case 0:
-            system("cls");
-            displayBaseMenu();
-            int n;
-            cin >> n;
-
-            switch (n)
-            {
-            case 1:
-            case 2:
-                menuStack.push(n);
-                break;
-
-            case 0:
-                exitProgram = true;
-                break;
-
-            default:
-                cout << "Invalid choice\n";
-            }
+        if (baseChoice == 0)
             break;
 
+        switch (baseChoice)
+        {
         case 1:
-        case 2:
-        {
-            system("cls");
-            int choice;
-
-            if (menuStack.size() == 2)
-                displayStaffMenu();
-            else
-                displayStudentMenu(); // Yahaan student menu display karna bhool gaya tha
-
-            cin >> choice;
-
-            switch (choice)
+            while (true)
             {
-            case 0:
-                menuStack.pop(); // Go back to the previous menu
-                break;
+                displayStaffMenu();
+                cin >> staffChoice;
 
-            case 1:
-                // Handle staff or student specific functionality
-                break;
+                if (staffChoice == 0)
+                    break;
 
-            case 2:
-                // Handle staff or student specific functionality
-                break;
-
-            case 3:
-                if (menuStack.size() == 3 && menuStack.top() == 2)
-                {
-                    // Handle return book for student
-                }
-                else
-                {
-                    cout << "Invalid choice\n";
-                }
-                break;
-
-            default:
-                cout << "Invalid choice\n";
+                // Add your functionality for each staff menu choice here
             }
             break;
-        }
-        }
 
-    } while (!exitProgram);
+        case 2:
+            while (true)
+            {
+                displayStudentMenu();
+                cin >> studentChoice;
 
-    if (exitProgram)
-    {
-        return 0;
+                if (studentChoice == 0)
+                    break;
+
+                switch (studentChoice)
+                {
+                case 1:
+                    while (true)
+                    {
+                        displaySearchBookMenu();
+                        int searchBookChoice;
+                        cin >> searchBookChoice;
+
+                        if (searchBookChoice == 0)
+                            break;
+
+                        // Add your functionality for each search book menu choice here
+                    }
+                    break;
+
+                    // Handle other student menu choices here
+                }
+
+                // Add your functionality for each student menu choice here
+            }
+            break;
+
+        default:
+            cout << "Invalid choice. Please try again.\n";
+        }
     }
 
     return 0;
