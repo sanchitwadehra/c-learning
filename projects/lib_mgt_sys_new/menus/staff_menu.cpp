@@ -1,5 +1,5 @@
 #include <iostream>
-#include "headers/clrscr.h"
+#include "../headers/clrscr.h"
 using namespace std;
 
 void displayStaffMenu()

@@ -2,6 +2,7 @@
 #include "headers/clrscr.h"
 #include "menus/student_menu.cpp"
 #include "menus/staff_menu.cpp"
+#include "functions/search_book.cpp"
 using namespace std;
 
 void displayBaseMenu()
@@ -57,10 +58,19 @@ int main()
                         displaySearchBookMenu();
                         int searchBookChoice;
                         cin >> searchBookChoice;
-
                         if (searchBookChoice == 0)
                             break;
 
+                        switch (searchBookChoice)
+                        {
+                            while (true)
+                            {
+                            case 1:
+                                search_book_by_title();
+                                break;
+                            }
+                            break;
+                        }
                         // Add your functionality for each search book menu choice here
                     }
                     break;
