@@ -72,7 +72,7 @@ int main()
             if (menuStack.size() == 2)
                 displayStaffMenu();
             else
-                displayStudentMenu();
+                displayStudentMenu(); // Yahaan student menu display karna bhool gaya tha
 
             cin >> choice;
 
