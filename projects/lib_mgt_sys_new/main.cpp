@@ -1,7 +1,7 @@
 #include <iostream>
-#include "utilities/utilities.h"
-#include "student_menu.cpp"
-#include "staff_menu.cpp"
+#include "headers/clrscr.h"
+#include "menus/student_menu.cpp"
+#include "menus/staff_menu.cpp"
 using namespace std;
 
 void displayBaseMenu()
