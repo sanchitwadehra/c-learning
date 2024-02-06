@@ -1,16 +1,17 @@
-#ifdef _WIN32
-    #define CLEAR "cls"
-#else //In any other OS
-    #define CLEAR "clear"
-#endif
-
 #include <iostream>
+#include "utilities/utilities.h"
 using namespace std;
 
-void clearScreen()
+void displayStudentMenu()
 {
-    system(CLEAR);
+    clearScreen();
+    cout << "Student Menu:\n";
+    cout << "1. Search Book\n";
+    cout << "2. Explore\n";
+    cout << "3. Return Book\n";
+    cout << "Enter your choice (0 to go back): ";
 }
+
 
 void displaySearchBookMenu()
 {

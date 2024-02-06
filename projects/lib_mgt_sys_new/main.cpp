@@ -1,18 +1,8 @@
-#ifdef _WIN32
-    #define CLEAR "cls"
-#else //In any other OS
-    #define CLEAR "clear"
-#endif
-
 #include <iostream>
+#include "utilities/utilities.h"
 #include "student_menu.cpp"
 #include "staff_menu.cpp"
 using namespace std;
-
-void clearScreen()
-{
-    system(CLEAR);
-}
 
 void displayBaseMenu()
 {
@@ -21,26 +11,6 @@ void displayBaseMenu()
     cout << "1. Staff\n";
     cout << "2. Student\n";
     cout << "Enter your choice (0 to exit): ";
-}
-
-void displayStaffMenu()
-{
-    clearScreen();
-    cout << "Staff Menu:\n";
-    cout << "1. Pending Issue Requests\n";
-    cout << "2. Issuing History\n";
-    cout << "3. Add New Book\n";
-    cout << "Enter your choice (0 to go back): ";
-}
-
-void displayStudentMenu()
-{
-    clearScreen();
-    cout << "Student Menu:\n";
-    cout << "1. Search Book\n";
-    cout << "2. Explore\n";
-    cout << "3. Return Book\n";
-    cout << "Enter your choice (0 to go back): ";
 }
 
 int main()
