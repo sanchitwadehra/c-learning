@@ -7,7 +7,7 @@ void displayStudentMenu()
     clearScreen();
     cout << "Student Menu:\n";
     cout << "1. Search Book\n";
-    cout << "2. Explore\n";
+    cout << "2. Explore Genres\n";
     cout << "3. Return Book\n";
     cout << "Enter your choice (0 to go back): ";
 }
