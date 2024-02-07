@@ -211,6 +211,69 @@ public:
     vector<Issued> issues;
     vector<IssueRequest> requests;
     vector<Tags> tags;
+    void printData_students()
+    {
+        cout << "Students:\n";
+        for (auto &student : students)
+        {
+            student.printData();
+            cout << endl;
+        }
+    }
+    void printData_books()
+    {
+        cout << "Books:\n";
+        for (auto &book : books)
+        {
+            book.printData();
+            cout << endl;
+        }
+    }
+    void printData_staffs()
+    {
+        cout << "Staffs:\n";
+        for (auto &staff : staffs)
+        {
+            staff.printData();
+            cout << endl;
+        }
+    }
+    void printData_authors()
+    {
+        cout << "Authors:\n";
+        for (auto &author : authors)
+        {
+            author.printData();
+            cout << endl;
+        }
+    }
+    void printData_issues()
+    {
+        cout << "Issues:\n";
+        for (auto &issue : issues)
+        {
+            issue.printData();
+            cout << endl;
+        }
+    }
+    void printData_requests()
+    {
+        cout << "Requests:\n";
+        for (auto &request : requests)
+        {
+            request.printData();
+            cout << endl;
+        }
+    }
+    void printData_tags()
+    {
+        cout << "Tags:\n";
+        for (auto &tag : tags)
+        {
+            tag.printData();
+            cout << endl;
+        }
+    }
     void printData()
     {
         cout << "Students:\n";
@@ -219,42 +282,36 @@ public:
             student.printData();
             cout << endl;
         }
-
         cout << "Books:\n";
         for (auto &book : books)
         {
             book.printData();
             cout << endl;
         }
-
         cout << "Staffs:\n";
         for (auto &staff : staffs)
         {
             staff.printData();
             cout << endl;
         }
-
         cout << "Authors:\n";
         for (auto &author : authors)
         {
             author.printData();
             cout << endl;
         }
-
         cout << "Issues:\n";
         for (auto &issue : issues)
         {
             issue.printData();
             cout << endl;
         }
-
         cout << "Requests:\n";
         for (auto &request : requests)
         {
             request.printData();
             cout << endl;
         }
-
         cout << "Tags:\n";
         for (auto &tag : tags)
         {
