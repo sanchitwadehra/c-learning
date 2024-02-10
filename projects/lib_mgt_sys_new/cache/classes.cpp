@@ -211,6 +211,7 @@ public:
     vector<Issued> issues;
     vector<IssueRequest> requests;
     vector<Tags> tags;
+    LastIDUsed lastID;
     void printData_students()
     {
         cout << "Students:\n";
