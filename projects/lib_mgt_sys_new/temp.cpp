@@ -37,7 +37,7 @@ void read_tags_csv(const string& filename, Storage& storage) {
 int main() {
     Storage storage;
     read_tags_csv("data/tags_data.csv", storage);
-    for (const auto& tag : storage.tags) {
+    for (auto& tag : storage.tags) {
         tag.printData();
     }
     return 0;
