@@ -64,7 +64,5 @@ void search_book_by_title(Storage& storage)
     getline(cin >> ws, s);
     Book temp = closestObject(storage.books, s);
     temp.printData();
-    cout<<"Enter 0 to return :- "<<endl;
-    int cdmc;
-    cin>>cdmc;
+    cout << "Enter your choice (0 to go back): ";
 }

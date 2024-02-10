@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 #include "headers/clrscr.h"
 #include "menus/student_menu.cpp"
 #include "menus/staff_menu.cpp"
@@ -24,6 +25,13 @@ int main()
         displayBaseMenu();
         cin >> baseChoice;
 
+        if (cin.fail())
+        {
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
+
         if (baseChoice == 0)
             break;
 
@@ -34,6 +42,13 @@ int main()
             {
                 displayStaffMenu();
                 cin >> staffChoice;
+
+                if (cin.fail())
+                {
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    continue;
+                }
 
                 if (staffChoice == 0)
                     break;
@@ -48,6 +63,13 @@ int main()
                 displayStudentMenu();
                 cin >> studentChoice;
 
+                if (cin.fail())
+                {
+                    cin.clear();
+                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                    continue;
+                }
+
                 if (studentChoice == 0)
                     break;
 
@@ -59,18 +81,35 @@ int main()
                         displaySearchBookMenu();
                         int searchBookChoice;
                         cin >> searchBookChoice;
+
+                        if (cin.fail())
+                        {
+                            cin.clear();
+                            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                            continue;
+                        }
+
                         if (searchBookChoice == 0)
                             break;
 
                         switch (searchBookChoice)
                         {
-                            while (true)
-                            {
                             case 1:
-                                search_book_by_title(storage);
+                                while(true){
+                                    search_book_by_title(storage);
+                                    int booksearchchoice;
+                                    cin>> booksearchchoice;
+
+                                    if (cin.fail())
+                                    {
+                                        cin.clear();
+                                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                        continue;
+                                    }
+
+                                    break;
+                                }
                                 break;
-                            }
-                            break;
                         }
                         // Add your functionality for each search book menu choice here
                     }
