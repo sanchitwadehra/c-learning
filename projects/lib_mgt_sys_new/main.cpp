@@ -16,6 +16,7 @@ void displayBaseMenu()
 
 int main()
 {
+    Storage storage;
     int baseChoice, staffChoice, studentChoice;
 
     while (true)
@@ -66,7 +67,7 @@ int main()
                             while (true)
                             {
                             case 1:
-                                search_book_by_title();
+                                search_book_by_title(storage);
                                 break;
                             }
                             break;
