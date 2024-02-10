@@ -191,22 +191,33 @@ void read_books_csv(const string &filename, Storage &storage)
         stringstream ss(line);
         Book book;
         getline(ss, book.name, ',');
-        string book_id_str, author_ids_str, page_length_str, published_year_str, total_copies_str, issued_copies_str, tags_str;
+        string book_id_str, author_ids_str, page_length_str, published_year_str, total_copies_str, issued_copies_str;
         getline(ss, book_id_str, ',');
         getline(ss, author_ids_str, ',');
         getline(ss, page_length_str, ',');
         getline(ss, published_year_str, ',');
         getline(ss, total_copies_str, ',');
         getline(ss, issued_copies_str, ',');
-        getline(ss, tags_str, ',');
         book.book_ID = stoi(book_id_str);
         book.author_IDs = parse_ids(author_ids_str);
         book.page_length = stoi(page_length_str);
         book.published_year = stoi(published_year_str);
         book.total_number_of_copies = stoi(total_copies_str);
         book.number_of_issued_copies = stoi(issued_copies_str);
+
+        // Read the rest of the line
+        string rest_of_line;
+        getline(ss, rest_of_line);
+
+        // Find the position of the first and last curly brace
+        size_t first_brace_pos = rest_of_line.find('{');
+        size_t last_brace_pos = rest_of_line.find('}');
+
+        // Extract the substring between the curly braces
+        string tags_str = rest_of_line.substr(first_brace_pos + 1, last_brace_pos - first_brace_pos - 1);
+
         // Parse tags_str to get the tags
-        stringstream ss_tags(tags_str.substr(1, tags_str.size() - 2)); // Remove the {} brackets
+        stringstream ss_tags(tags_str);
         string tag;
         while (getline(ss_tags, tag, ','))
         {

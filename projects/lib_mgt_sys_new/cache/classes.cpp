@@ -16,7 +16,7 @@ public:
         cout << "Age: " << age << endl;
         cout << "Gender: " << gender << endl;
         cout << "Phone Numbers: ";
-        for (const auto &number : phone_numbers)
+        for (auto &number : phone_numbers)
         {
             cout << number << " ";
         }
@@ -35,7 +35,7 @@ public:
         Human::printData();
         cout << "Student ID: " << student_ID << endl;
         cout << "Issuing IDs: ";
-        for (const auto &id : issuing_IDs)
+        for (auto &id : issuing_IDs)
         {
             cout << id << " ";
         }
@@ -66,13 +66,13 @@ public:
         Human::printData();
         cout << "Author ID: " << author_ID << endl;
         cout << "Book IDs: ";
-        for (const auto &id : book_IDs)
+        for (auto &id : book_IDs)
         {
             cout << id << " ";
         }
         cout << endl;
         cout << "Tags by Frequency: ";
-        for (const auto &tag : tags_by_frequency)
+        for (auto &tag : tags_by_frequency)
         {
             cout << "(" << tag.first << ", " << tag.second << ") ";
         }
@@ -95,7 +95,7 @@ public:
     {
         cout << "Book Name: " << name << endl;
         cout << "Author IDs: ";
-        for (const auto &id : author_IDs)
+        for (auto &id : author_IDs)
         {
             cout << id << " ";
         }
@@ -105,7 +105,7 @@ public:
         cout << "Total Number of Copies: " << total_number_of_copies << endl;
         cout << "Number of Issued Copies: " << number_of_issued_copies << endl;
         cout << "Tags: ";
-        for (const auto &tag : tags)
+        for ( auto &tag : tags)
         {
             cout << tag << " ";
         }
@@ -143,13 +143,13 @@ public:
     {
         cout << "Request ID: " << request_ID << endl;
         cout << "Book IDs: ";
-        for (const auto &id : book_IDs)
+        for (auto &id : book_IDs)
         {
             cout << id << " ";
         }
         cout << endl;
         cout << "Copies for Each: ";
-        for (const auto &copies : copies_for_each)
+        for (auto &copies : copies_for_each)
         {
             cout << copies << " ";
         }
@@ -187,13 +187,13 @@ public:
     {
         cout << "Tag Name: " << name << endl;
         cout << "Book IDs: ";
-        for (const auto &id : book_IDs)
+        for (auto &id : book_IDs)
         {
             cout << id << " ";
         }
         cout << endl;
         cout << "Author IDs: ";
-        for (const auto &id : author_IDs)
+        for (auto &id : author_IDs)
         {
             cout << id << " ";
         }

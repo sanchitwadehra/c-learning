@@ -94,22 +94,40 @@ int main()
 
                         switch (searchBookChoice)
                         {
-                            case 1:
-                                while(true){
-                                    search_book_by_title(storage);
-                                    int booksearchchoice;
-                                    cin>> booksearchchoice;
+                        case 1:
+                            while (true)
+                            {
+                                search_book_by_title(storage);
+                                int booksearchchoice;
+                                cin >> booksearchchoice;
 
-                                    if (cin.fail())
-                                    {
-                                        cin.clear();
-                                        cin.ignore(numeric_limits<streamsize>::max(), '\n');
-                                        continue;
-                                    }
-
-                                    break;
+                                if (cin.fail())
+                                {
+                                    cin.clear();
+                                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                    continue;
                                 }
+
                                 break;
+                            }
+                            break;
+                        case 2:
+                            while (true)
+                            {
+                                search_book_by_author(storage);
+                                int booksearchchoice;
+                                cin >> booksearchchoice;
+
+                                if (cin.fail())
+                                {
+                                    cin.clear();
+                                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                    continue;
+                                }
+
+                                break;
+                            }
+                            break;
                         }
                         // Add your functionality for each search book menu choice here
                     }
