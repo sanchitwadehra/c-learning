@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <map>
 #include "../headers/clrscr.h"
 using namespace std;
 class Human
@@ -212,6 +213,7 @@ public:
     vector<IssueRequest> requests;
     vector<Tags> tags;
     LastIDUsed lastID;
+    map<string, bool> loadedFiles;
     void printData_students()
     {
         cout << "Students:\n";

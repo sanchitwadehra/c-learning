@@ -183,6 +183,11 @@ void read_issues_csv(const string &filename, Storage &storage)
 
 void read_books_csv(const string &filename, Storage &storage)
 {
+    if (storage.loadedFiles[filename])
+    {
+        // File has already been loaded, so return
+        return;
+    }
     ifstream file(filename);
     string line;
     getline(file, line); // Skip the header line
@@ -224,11 +229,17 @@ void read_books_csv(const string &filename, Storage &storage)
             book.tags.push_back(tag);
         }
         storage.books.push_back(book);
+        storage.loadedFiles[filename] = true;
     }
 }
 
 void read_authors_csv(const string &filename, Storage &storage)
 {
+    if (storage.loadedFiles[filename])
+    {
+        // File has already been loaded, so return
+        return;
+    }
     ifstream file(filename);
     string line;
     getline(file, line); // Skip the header line
@@ -267,5 +278,6 @@ void read_authors_csv(const string &filename, Storage &storage)
             author.tags_by_frequency.push_back(make_pair(tag, frequency));
         }
         storage.authors.push_back(author);
+        storage.loadedFiles[filename] = true;
     }
 }
