@@ -45,6 +45,11 @@ vector<string> parse_phone_numbers(const string &phone_numbers_str)
 
 void read_tags_csv(const string &filename, Storage &storage)
 {
+    if (storage.loadedFiles[filename])
+    {
+        // File has already been loaded, so return
+        return;
+    }
     ifstream file(filename);
     string line;
     getline(file, line); // Skip the header line
@@ -60,10 +65,16 @@ void read_tags_csv(const string &filename, Storage &storage)
         tag.author_IDs = parse_ids(author_ids_str);
         storage.tags.push_back(tag);
     }
+    storage.loadedFiles[filename] = true;
 }
 
 void read_students_csv(const string &filename, Storage &storage)
 {
+    if (storage.loadedFiles[filename])
+    {
+        // File has already been loaded, so return
+        return;
+    }
     ifstream file(filename);
     string line;
     getline(file, line); // Skip the header line
@@ -85,10 +96,16 @@ void read_students_csv(const string &filename, Storage &storage)
         student.phone_numbers = parse_phone_numbers(phone_numbers_str);
         storage.students.push_back(student);
     }
+    storage.loadedFiles[filename] = true;
 }
 
 void read_staffs_csv(const string &filename, Storage &storage)
 {
+    if (storage.loadedFiles[filename])
+    {
+        // File has already been loaded, so return
+        return;
+    }
     ifstream file(filename);
     string line;
     getline(file, line); // Skip the header line
@@ -110,10 +127,16 @@ void read_staffs_csv(const string &filename, Storage &storage)
         staff.phone_numbers = parse_phone_numbers(phone_numbers_str);
         storage.staffs.push_back(staff);
     }
+    storage.loadedFiles[filename] = true;
 }
 
 void read_requests_csv(const string &filename, Storage &storage)
 {
+    if (storage.loadedFiles[filename])
+    {
+        // File has already been loaded, so return
+        return;
+    }
     ifstream file(filename);
     string line;
     getline(file, line); // Skip the header line
@@ -134,10 +157,16 @@ void read_requests_csv(const string &filename, Storage &storage)
         request.approval_status = (approval_status_str == "Approved");
         storage.requests.push_back(request);
     }
+    storage.loadedFiles[filename] = true;
 }
 
 void read_last_ids_csv(const string &filename, Storage &storage)
 {
+    if (storage.loadedFiles[filename])
+    {
+        // File has already been loaded, so return
+        return;
+    }
     ifstream file(filename);
     string line;
     getline(file, line); // Skip the header line
@@ -156,10 +185,16 @@ void read_last_ids_csv(const string &filename, Storage &storage)
         storage.lastID.issuing_ID = stoi(issuing_ID_str);
         storage.lastID.request_ID = stoi(request_ID_str);
     }
+    storage.loadedFiles[filename] = true;
 }
 
 void read_issues_csv(const string &filename, Storage &storage)
 {
+    if (storage.loadedFiles[filename])
+    {
+        // File has already been loaded, so return
+        return;
+    }
     ifstream file(filename);
     string line;
     getline(file, line); // Skip the header line
@@ -179,6 +214,7 @@ void read_issues_csv(const string &filename, Storage &storage)
         issue.number_of_days_issued = stoi(number_of_days_issued_str);
         storage.issues.push_back(issue);
     }
+    storage.loadedFiles[filename] = true;
 }
 
 void read_books_csv(const string &filename, Storage &storage)
@@ -229,8 +265,8 @@ void read_books_csv(const string &filename, Storage &storage)
             book.tags.push_back(tag);
         }
         storage.books.push_back(book);
-        storage.loadedFiles[filename] = true;
     }
+    storage.loadedFiles[filename] = true;
 }
 
 void read_authors_csv(const string &filename, Storage &storage)
@@ -278,6 +314,6 @@ void read_authors_csv(const string &filename, Storage &storage)
             author.tags_by_frequency.push_back(make_pair(tag, frequency));
         }
         storage.authors.push_back(author);
-        storage.loadedFiles[filename] = true;
     }
+    storage.loadedFiles[filename] = true;
 }
