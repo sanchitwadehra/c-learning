@@ -1,2 +1,2 @@
-student_ID,staff_ID,book_ID,issuing_ID,request_ID
-1,1,2,1,1
+student_ID,staff_ID,author_ID,book_ID,issuing_ID,request_ID
+1,1,2,2,1,1

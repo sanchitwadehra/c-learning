@@ -106,7 +106,7 @@ public:
         cout << "Total Number of Copies: " << total_number_of_copies << endl;
         cout << "Number of Issued Copies: " << number_of_issued_copies << endl;
         cout << "Tags: ";
-        for ( auto &tag : tags)
+        for (auto &tag : tags)
         {
             cout << tag << " ";
         }
@@ -165,6 +165,7 @@ class LastIDUsed
 public:
     int student_ID;
     int staff_ID;
+    int author_ID;
     int book_ID;
     int issuing_ID;
     int request_ID;
@@ -172,6 +173,7 @@ public:
     {
         cout << "Last Student ID Used: " << student_ID << endl;
         cout << "Last Staff ID Used: " << staff_ID << endl;
+        cout << "Last Author ID Used: " << author_ID << endl;
         cout << "Last Book ID Used: " << book_ID << endl;
         cout << "Last Issuing ID Used: " << issuing_ID << endl;
         cout << "Last Request ID Used: " << request_ID << endl;

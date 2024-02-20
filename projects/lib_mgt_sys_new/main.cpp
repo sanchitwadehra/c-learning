@@ -4,6 +4,7 @@
 #include "menus/student_menu.cpp"
 #include "menus/staff_menu.cpp"
 #include "functions/search_book.cpp"
+#include "functions/explore_genres.cpp"
 using namespace std;
 
 void displayBaseMenu()
@@ -130,6 +131,25 @@ int main()
                             break;
                         }
                         // Add your functionality for each search book menu choice here
+                    }
+                    break;
+
+                case 2:
+                    while (true)
+                    {
+                        explore_genres(storage);
+                        int genreChoice;
+                        cin >> genreChoice;
+
+                        if (cin.fail())
+                        {
+                            cin.clear();
+                            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                            continue;
+                        }
+
+                        if (genreChoice == 0)
+                            break;
                     }
                     break;
 
