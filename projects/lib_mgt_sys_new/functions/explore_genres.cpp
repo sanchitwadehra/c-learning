@@ -6,8 +6,8 @@
 #include <limits>
 #include <sstream>
 #include <fstream>
-#include "../cache/loader.cpp"
 #include "../headers/clrscr.h"
+#include "../headers/loader.h"
 using namespace std;
 
 void explore_genres(Storage &storage)

@@ -6,8 +6,8 @@
 #include <limits>
 #include <sstream>
 #include <fstream>
-#include "../cache/loader.cpp"
 #include "../headers/clrscr.h"
+#include "../headers/loader.h"
 using namespace std;
 
 Book closestTitle(vector<Book> &arr, const string &target)
