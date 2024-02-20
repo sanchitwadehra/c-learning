@@ -3,8 +3,9 @@
 #include <string>
 #include <sstream>
 #include <fstream>
-#include "../cache/classes.cpp"
 #include "../headers/clrscr.h"
+#include "../headers/loader.h"
+#include "../headers/classes.h"
 using namespace std;
 
 vector<int> parse_ids(const string &ids_str)

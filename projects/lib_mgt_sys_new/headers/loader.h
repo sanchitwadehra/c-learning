@@ -3,8 +3,8 @@
 
 #include <vector>
 #include <string>
-#include "../cache/classes.cpp"
 #include "../headers/clrscr.h"
+#include "../headers/classes.h"
 
 std::vector<int> parse_ids(const std::string &ids_str);
 std::vector<std::string> parse_phone_numbers(const std::string &phone_numbers_str);
