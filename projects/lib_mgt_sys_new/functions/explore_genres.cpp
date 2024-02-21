@@ -15,44 +15,62 @@ void explore_genres(Storage &storage)
     clearScreen();
     read_tags_csv("data/tags_data.csv", storage);
     cout << "Genres:\n";
+    int index = 1;
+    vector<string> genreList;
     for (auto &tag : storage.tags)
     {
-        cout << tag.name << " (" << tag.book_IDs.size() << " books)\n";
+        cout << index << ". " << tag.name << " (" << tag.book_IDs.size() << " books)\n";
+        genreList.push_back(tag.name);
+        index++;
     }
-    cout << "Enter the genre (0 to go back): ";
-    string genre;
-    getline(cin >> ws, genre);
+    cout << "Enter the genre number (0 to go back): ";
+    int genreIndex;
+    cin >> genreIndex;
 
-    if (genre == "0")
+    if (genreIndex == 0)
         return;
 
+    string genre = genreList[genreIndex - 1];
     clearScreen();
     cout << "Books in " << genre << ":\n";
+    index = 1;
+    vector<string> bookList;
+    map<int, Book> booksMap;
+    map<int, Author> authorsMap;
     for (auto &book : storage.books)
     {
-        if (find(book.tags.begin(), book.tags.end(), genre) != book.tags.end())
+        booksMap[book.book_ID] = book;
+    }
+    for (auto &author : storage.authors)
+    {
+        authorsMap[author.author_ID] = author;
+    }
+    for (auto &tag : storage.tags)
+    {
+        if (tag.name == genre)
         {
-            for (auto &author_ID : book.author_IDs)
+            for (auto &book_ID : tag.book_IDs)
             {
-                for (auto &author : storage.authors)
+                Book book = booksMap[book_ID];
+                for (auto &author_ID : book.author_IDs)
                 {
-                    if (author.author_ID == author_ID)
-                    {
-                        cout << book.name << " by " << author.name << "\n";
-                        break;
-                    }
+                    Author author = authorsMap[author_ID];
+                    cout << index << ". " << book.name << " by " << author.name << "\n";
+                    bookList.push_back(book.name);
+                    index++;
                 }
             }
         }
     }
-    cout << "Enter the book title (0 to go back): ";
-    string title;
-    getline(cin >> ws, title);
+    cout << "Enter the book number (0 to go back): ";
+    int bookIndex;
+    cin >> bookIndex;
 
-    if (title == "0")
+    if (bookIndex == 0)
         return;
 
     clearScreen();
+    string title = bookList[bookIndex - 1];
     for (auto &book : storage.books)
     {
         if (book.name == title)
@@ -63,3 +81,4 @@ void explore_genres(Storage &storage)
     }
     cout << "Enter your choice (0 to go back): ";
 }
+
