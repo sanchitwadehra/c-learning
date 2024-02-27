@@ -13,72 +13,45 @@ using namespace std;
 void explore_genres(Storage &storage)
 {
     clearScreen();
+
+    // Load the tags data
     read_tags_csv("data/tags_data.csv", storage);
-    cout << "Genres:\n";
-    int index = 1;
-    vector<string> genreList;
-    for (auto &tag : storage.tags)
-    {
-        cout << index << ". " << tag.name << " (" << tag.book_IDs.size() << " books)\n";
-        genreList.push_back(tag.name);
-        index++;
-    }
-    cout << "Enter the genre number (0 to go back): ";
-    int genreIndex;
-    cin >> genreIndex;
 
-    if (genreIndex == 0)
-        return;
+    // Print the list of genres and the number of books in each genre
+    for (int i = 0; i < storage.tags.size(); i++)
+    {
+        cout << i + 1 << ". " << storage.tags[i].name << " (" << storage.tags[i].book_IDs.size() << " books)\n";
+    }
 
-    string genre = genreList[genreIndex - 1];
-    clearScreen();
-    cout << "Books in " << genre << ":\n";
-    index = 1;
-    vector<string> bookList;
-    map<int, Book> booksMap;
-    map<int, Author> authorsMap;
-    for (auto &book : storage.books)
+    // Prompt the user to select a genre
+    cout << "Enter the number of the genre you want to explore: ";
+    int genre_choice;
+    cin >> genre_choice;
+
+    // Get the selected genre
+    Tags selected_genre = storage.tags[genre_choice - 1];
+
+    // Load the books data
+    read_books_csv("data/books_data.csv", storage);
+
+    // Print the list of books in the selected genre along with the author's name
+    for (int i = 0; i < selected_genre.book_IDs.size(); i++)
     {
-        booksMap[book.book_ID] = book;
-    }
-    for (auto &author : storage.authors)
-    {
-        authorsMap[author.author_ID] = author;
-    }
-    for (auto &tag : storage.tags)
-    {
-        if (tag.name == genre)
+        for (Book &book : storage.books)
         {
-            for (auto &book_ID : tag.book_IDs)
+            if (book.book_ID == selected_genre.book_IDs[i])
             {
-                Book book = booksMap[book_ID];
-                for (auto &author_ID : book.author_IDs)
-                {
-                    Author author = authorsMap[author_ID];
-                    cout << index << ". " << book.name << " by " << author.name << "\n";
-                    bookList.push_back(book.name);
-                    index++;
-                }
+                cout << book.name << " by " << book.author_IDs[0] << "\n"; // Assuming each book has one author
             }
         }
     }
-    cout << "Enter the book number (0 to go back): ";
-    int bookIndex;
-    cin >> bookIndex;
 
-    if (bookIndex == 0)
-        return;
+    // Prompt the user to select a book
+    cout << "Enter the number of the book you want to view details of: ";
+    int book_choice;
+    cin >> book_choice;
 
-    clearScreen();
-    string title = bookList[bookIndex - 1];
-    for (auto &book : storage.books)
-    {
-        if (book.name == title)
-        {
-            book.printData();
-            break;
-        }
-    }
-    cout << "Enter your choice (0 to go back): ";
+    // Get the selected book and print its details
+    Book selected_book = storage.books[book_choice - 1];
+    selected_book.printData();
 }
-
