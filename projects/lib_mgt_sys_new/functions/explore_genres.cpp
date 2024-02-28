@@ -12,63 +12,227 @@ using namespace std;
 
 void explore_genres(Storage &storage)
 {
-    clearScreen();
-
-    // Load the tags data
-    read_tags_csv("data/tags_data.csv", storage);
-
-    cout << "Genre Selection Menu: " << endl;
-
-    // Print the list of genres and the number of books in each genre
-    for (int i = 0; i < storage.tags.size(); i++)
+    while (true)
     {
-        cout << i + 1 << ". " << storage.tags[i].name << " (" << storage.tags[i].book_IDs.size() << " books)\n";
-    }
+        clearScreen();
 
-    // Prompt the user to select a genre
-    cout << "Enter your choice (0 to go back): ";
-    int genre_choice;
-    cin >> genre_choice;
+        // Load the tags data
+        read_tags_csv("data/tags_data.csv", storage);
 
-    if (genre_choice == 0)
-        return;
+        cout << "Genre Selection Menu: " << endl;
 
-    // Get the selected genre
-    Tags selected_genre = storage.tags[genre_choice - 1];
-
-    // Clear the screen after genre selection
-    clearScreen();
-
-    // Load the books data
-    read_books_csv("data/books_data.csv", storage);
-
-    cout << selected_genre.name << " books: " << endl;
-
-    // Print the list of books in the selected genre along with the author's name
-    vector<Book> books_in_genre;
-    for (int i = 0; i < selected_genre.book_IDs.size(); i++)
-    {
-        for (Book &book : storage.books)
+        // Print the list of genres and the number of books in each genre
+        for (int i = 0; i < storage.tags.size(); i++)
         {
-            if (book.book_ID == selected_genre.book_IDs[i])
+            cout << i + 1 << ". " << storage.tags[i].name << " (" << storage.tags[i].book_IDs.size() << " books)\n";
+        }
+
+        // Prompt the user to select a genre
+        cout << "Enter your choice (0 to go back): ";
+        int genre_choice;
+        cin >> genre_choice;
+        cin.ignore();
+
+        if (genre_choice == 0)
+            return;
+
+        // Get the selected genre
+        Tags selected_genre = storage.tags[genre_choice - 1];
+
+        // Clear the screen after genre selection
+        clearScreen();
+
+        // Load the books data
+        read_books_csv("data/books_data.csv", storage);
+
+        cout << selected_genre.name << " books: " << endl;
+
+        // Print the list of books in the selected genre along with the author's name
+        vector<Book> books_in_genre;
+        for (int i = 0; i < selected_genre.book_IDs.size(); i++)
+        {
+            for (Book &book : storage.books)
             {
-                books_in_genre.push_back(book);
-                cout << books_in_genre.size() << ". " << book.name << " by " << book.author_IDs[0] << "\n"; // Assuming each book has one author
+                if (book.book_ID == selected_genre.book_IDs[i])
+                {
+                    books_in_genre.push_back(book);
+                    cout << books_in_genre.size() << ". " << book.name << " by " << book.author_IDs[0] << "\n"; // Assuming each book has one author
+                }
+            }
+        }
+
+        while (true)
+        {
+            // Prompt the user to select a book
+            cout << "Enter your choice (0 to go back): ";
+            int book_choice;
+            cin >> book_choice;
+            cin.ignore();
+
+            if (book_choice == 0)
+                break;
+
+            while (true)
+            {
+                clearScreen();
+                // Get the selected book and print its details
+                Book selected_book = books_in_genre[book_choice - 1];
+                selected_book.printData();
+                cout << "Enter your choice (0 to go back): ";
+                int detail_choice;
+                cin >> detail_choice;
+                cin.ignore();
+
+                if (detail_choice == 0)
+                    break;
             }
         }
     }
-
-    // Prompt the user to select a book
-    cout << "Enter your choice (0 to go back): ";
-    int book_choice;
-    cin >> book_choice;
-
-    if (book_choice == 0)
-        return;
-
-    clearScreen();
-    // Get the selected book and print its details
-    Book selected_book = books_in_genre[book_choice - 1];
-    selected_book.printData();
-    cout << "Enter your choice (0 to go back): ";
 }
+
+
+// void explore_genres(Storage &storage)
+// {
+//     while (true)
+//     {
+//         clearScreen();
+
+//         // Load the tags data
+//         read_tags_csv("data/tags_data.csv", storage);
+
+//         cout << "Genre Selection Menu: " << endl;
+
+//         // Print the list of genres and the number of books in each genre
+//         for (int i = 0; i < storage.tags.size(); i++)
+//         {
+//             cout << i + 1 << ". " << storage.tags[i].name << " (" << storage.tags[i].book_IDs.size() << " books)\n";
+//         }
+
+//         // Prompt the user to select a genre
+//         cout << "Enter your choice (0 to go back): ";
+//         int genre_choice;
+//         cin >> genre_choice;
+//         cin.ignore();
+
+//         if (genre_choice == 0)
+//             return;
+
+//         // Get the selected genre
+//         Tags selected_genre = storage.tags[genre_choice - 1];
+
+//         // Clear the screen after genre selection
+//         clearScreen();
+
+//         // Load the books data
+//         read_books_csv("data/books_data.csv", storage);
+
+//         cout << selected_genre.name << " books: " << endl;
+
+//         // Print the list of books in the selected genre along with the author's name
+//         vector<Book> books_in_genre;
+//         for (int i = 0; i < selected_genre.book_IDs.size(); i++)
+//         {
+//             for (Book &book : storage.books)
+//             {
+//                 if (book.book_ID == selected_genre.book_IDs[i])
+//                 {
+//                     books_in_genre.push_back(book);
+//                     cout << books_in_genre.size() << ". " << book.name << " by " << book.author_IDs[0] << "\n"; // Assuming each book has one author
+//                 }
+//             }
+//         }
+
+//         while (true)
+//         {
+//             // Prompt the user to select a book
+//             cout << "Enter your choice (0 to go back): ";
+//             int book_choice;
+//             cin >> book_choice;
+//             cin.ignore();
+
+//             if (book_choice == 0)
+//                 break;
+
+//             while (true)
+//             {
+//                 clearScreen();
+//                 // Get the selected book and print its details
+//                 Book selected_book = books_in_genre[book_choice - 1];
+//                 selected_book.printData();
+//                 cout << "Enter your choice (0 to go back): ";
+//                 int detail_choice;
+//                 cin >> detail_choice;
+//                 cin.ignore();
+
+//                 if (detail_choice == 0)
+//                     break;
+//             }
+//         }
+//     }
+// }
+
+
+// void explore_genres(Storage &storage)
+// {
+//     clearScreen();
+
+//     // Load the tags data
+//     read_tags_csv("data/tags_data.csv", storage);
+
+//     cout << "Genre Selection Menu: " << endl;
+
+//     // Print the list of genres and the number of books in each genre
+//     for (int i = 0; i < storage.tags.size(); i++)
+//     {
+//         cout << i + 1 << ". " << storage.tags[i].name << " (" << storage.tags[i].book_IDs.size() << " books)\n";
+//     }
+
+//     // Prompt the user to select a genre
+//     cout << "Enter your choice (0 to go back): ";
+//     int genre_choice;
+//     cin >> genre_choice;
+//     cin.ignore();
+
+//     if (genre_choice == 0)
+//         return;
+
+//     // Get the selected genre
+//     Tags selected_genre = storage.tags[genre_choice - 1];
+
+//     // Clear the screen after genre selection
+//     clearScreen();
+
+//     // Load the books data
+//     read_books_csv("data/books_data.csv", storage);
+
+//     cout << selected_genre.name << " books: " << endl;
+
+//     // Print the list of books in the selected genre along with the author's name
+//     vector<Book> books_in_genre;
+//     for (int i = 0; i < selected_genre.book_IDs.size(); i++)
+//     {
+//         for (Book &book : storage.books)
+//         {
+//             if (book.book_ID == selected_genre.book_IDs[i])
+//             {
+//                 books_in_genre.push_back(book);
+//                 cout << books_in_genre.size() << ". " << book.name << " by " << book.author_IDs[0] << "\n"; // Assuming each book has one author
+//             }
+//         }
+//     }
+
+//     // Prompt the user to select a book
+//     cout << "Enter your choice (0 to go back): ";
+//     int book_choice;
+//     cin >> book_choice;
+//     cin.ignore();
+
+//     if (book_choice == 0)
+//         return;
+
+//     clearScreen();
+//     // Get the selected book and print its details
+//     Book selected_book = books_in_genre[book_choice - 1];
+//     selected_book.printData();
+//     cout << "Enter your choice (0 to go back): ";
+// }
