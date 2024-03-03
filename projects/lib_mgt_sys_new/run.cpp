@@ -19,6 +19,7 @@ int main()
     std::cout << "Loading for Windows.\n";
     system("scripts\\run.bat");
 #elif defined(OS_Mac) || defined(OS_Linux)
+    clearScreen();
     std::cout << "Loading for Linux/MacOS.\n";
     system("/bin/bash scripts/pre-run.sh");
     system("/bin/bash scripts/run.sh");
