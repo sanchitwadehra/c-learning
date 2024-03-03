@@ -306,14 +306,16 @@ void read_authors_csv(const string &filename, Storage &storage)
         }
         // Parse tags_by_frequency_str to get the tags by frequency
         stringstream ss_tags(tags_by_frequency_str.substr(1, tags_by_frequency_str.size() - 2)); // Remove the {} brackets
+
         string tag_by_frequency;
-        while (getline(ss_tags, tag_by_frequency, ','))
+        while (getline(ss_tags, tag_by_frequency, ';'))
         {
             int pos = tag_by_frequency.find(':');
             string tag = tag_by_frequency.substr(0, pos);
             int frequency = stoi(tag_by_frequency.substr(pos + 1));
             author.tags_by_frequency.push_back(make_pair(tag, frequency));
         }
+
         storage.authors.push_back(author);
     }
     storage.loadedFiles[filename] = true;

@@ -118,6 +118,14 @@ int main()
                                 search_book_by_author(storage);
                                 int booksearchchoice;
                                 cin >> booksearchchoice;
+                                cin >> booksearchchoice;
+                                if (cin.fail())
+                                {
+                                    cin.clear();
+                                    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                                    cout << "Invalid input. Please enter a number.\n";
+                                    continue;
+                                }
 
                                 if (cin.fail())
                                 {
